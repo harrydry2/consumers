@@ -60,11 +60,35 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(1);
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(2);
+
+var _bling = __webpack_require__(3);
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -90,97 +114,6 @@ NodeList.prototype.on = NodeList.prototype.addEventListener = function (name, fn
 
 exports.$ = $;
 exports.$$ = $$;
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(2);
-
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-__webpack_require__(3);
-
-var _bling = __webpack_require__(0);
-
-__webpack_require__(4);
-
-__webpack_require__(5);
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _bling = __webpack_require__(0);
-
-var iframe = (0, _bling.$)(".scrollDownVideo");
-var p1Container = (0, _bling.$)(".p1Container");
-var fixedSection = (0, _bling.$)(".fixedSection");
-var p2Container = (0, _bling.$)(".p2Container");
-var footerSection = (0, _bling.$)(".footerSection");
-
-// iframe width and Height
-iframe.style.width = window.innerWidth + "px";
-iframe.style.height = window.innerHeight + "px";
-fixedSection.style.top = "-" + window.innerHeight + "px";
-
-// iframeResize
-window.on("resize", adjustHeight);
-function adjustHeight() {
-  iframe.style.width = window.innerWidth + "px";
-  iframe.style.height = window.innerHeight + "px";
-}
-
-// CSS Transition
-p1Container.style.top = "-" + window.innerHeight + "px";
-window.on("load", animateiframeDown);
-function animateiframeDown() {
-  setTimeout(function () {
-    p1Container.style.transform = "translateY(" + window.innerHeight + "px)";
-    fixedSection.style.transform = "translateY(" + window.innerHeight + "px)";
-    p2Container.style.transform = "translateY(" + window.innerHeight + "px)";
-    footerSection.style.transform = "translateY(" + window.innerHeight + "px)";
-    iframe.src += "&autoplay=1";
-  }, 300);
-  setTimeout(function () {
-    iframe.style.opacity = "1";
-  }, 1300);
-}
-
-// iframe play/pause
-iframe.on("click", function () {
-  return iframe.paused ? iframe.play() : iframe.pause();
-});
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _bling = __webpack_require__(0);
-
-(0, _bling.$)("input").on("keypress", function (e) {
-  if (e.keyCode === 13) {
-    e.preventDefault();
-  }
-});
 
 /***/ })
 /******/ ]);

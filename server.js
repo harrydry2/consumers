@@ -5,15 +5,15 @@ const bodyParser = require("body-parser");
 const expressStaticGzip = require("express-static-gzip");
 const fs = require("fs");
 
-mongoose.Promise = global.Promise;
-mongoose.connect(
-  "mongodb://harrydry:DavidLuiz4@ds159676.mlab.com:59676/kidsleepy"
-);
-require("./models/Email.js");
+// mongoose.Promise = global.Promise;
+// mongoose.connect(
+//   "mongodb://harrydry:DavidLuiz4@ds159676.mlab.com:59676/kidsleepy"
+// );
+// require("./models/Email.js");
 
 const app = express();
 
-app.locals.format = require("date-fns/format");
+// app.locals.format = require("date-fns/format");
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
@@ -28,11 +28,11 @@ app.use((req, res, next) => {
   next();
 });
 
-require("./routes/emailRoutes")(app);
+// require("./routes/emailRoutes")(app);
 
 app.get("/", (req, res) => {
   res.render("main");
 });
 
-const PORT = process.env.PORT || 2000;
+const PORT = process.env.PORT || 1999;
 app.listen(PORT, () => console.log("listening"));
