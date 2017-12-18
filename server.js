@@ -28,9 +28,20 @@ app.use((req, res, next) => {
   next();
 });
 
-// require("./routes/emailRoutes")(app);
+require("./routes/chargeRoute")(app);
 
-app.get("/", (req, res) => {
+app.get(
+  "/.well-known/acme-challenge/egWBM-tu6w-jKzqqC73sYp2d6bdmF3f_VcClU_N0PVk",
+  (req, res) => {
+    res.send(
+      "egWBM-tu6w-jKzqqC73sYp2d6bdmF3f_VcClU_N0PVk.ySvRCyz5X1vWf6gd6f64mxvZ3OzaXyluhZRwpDEy03M"
+    );
+  }
+);
+
+//websitesformusicians.co/.well-known/acme-challenge/egWBM-tu6w-jKzqqC73sYp2d6bdmF3f_VcClU_N0PVk
+
+http: app.get("/", (req, res) => {
   res.render("main");
 });
 

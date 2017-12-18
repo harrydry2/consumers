@@ -7,6 +7,17 @@ html(lang='en')
     link(rel='stylesheet', href='/dist/bundle.css')
     title Sites For Musicians
   body
-    .p1Container          
+  form(action="/charge" method="POST")
+    script(
+      src="https://checkout.stripe.com/checkout.js" 
+      class="stripe-button" 
+      data-key="pk_test_WMEN1Ko6Pb36QwPGdf4gmRD5" 
+      data-amount="449"     
+      data-name="Websites For Artists"
+      data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+      data-locale="auto"
+      data-currency="GBP"
+      data-zip-code="false"
+    )         
     block scripts
       script(src="/dist/bundle.js")
