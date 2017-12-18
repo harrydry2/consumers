@@ -39,8 +39,6 @@ app.get(
   }
 );
 
-//websitesformusicians.co/.well-known/acme-challenge/egWBM-tu6w-jKzqqC73sYp2d6bdmF3f_VcClU_N0PVk
-
 http: app.get("/", (req, res) => {
   res.render("main");
 });
