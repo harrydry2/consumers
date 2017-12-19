@@ -46,32 +46,28 @@ a {
   text-decoration: none; }
 
 @font-face {
-  font-family: hnRoman;
-  src: url("/fonts/HNRoman.woff2") format("woff2"); }
+  font-family: CamphorStd-Bold;
+  src: url("/fonts/CamphorStd-Bold.woff2") format("woff"); }
 
 @font-face {
-  font-family: hnItalic;
-  src: url("/fonts/HNItalic.woff2") format("woff2"); }
+  font-family: CamphorStd-Italic;
+  src: url("/fonts/CamphorStd-Italic.woff2") format("woff"); }
 
 @font-face {
-  font-family: hnMedium;
-  src: url("/fonts/HNMedium.woff2") format("woff2"); }
+  font-family: CamphorStd-Light;
+  src: url("/fonts/CamphorStd-Light.woff2") format("woff"); }
 
 @font-face {
-  font-family: hnMediumItalic;
-  src: url("/fonts/HNMediumItalic.woff2") format("woff2"); }
+  font-family: CamphorStd-Medium;
+  src: url("/fonts/CamphorStd-Medium.woff2") format("woff"); }
 
 @font-face {
-  font-family: hnBold;
-  src: url("/fonts/HNBold.woff2") format("woff2"); }
+  font-family: CamphorStd-Regular;
+  src: url("/fonts/CamphorStd-Regular.woff2") format("woff"); }
 
 @font-face {
-  font-family: hnBoldItalic;
-  src: url("/fonts/HNBoldItalic.woff2") format("woff2"); }
-
-@font-face {
-  font-family: hnBoldOutline;
-  src: url("/fonts/HNBoldOutline.woff2") format("woff2"); }
+  font-family: CamphorStd-Thin;
+  src: url("/fonts/CamphorStd-Thin.woff2") format("woff"); }
 
 body, html {
   box-sizing: border-box;
@@ -86,11 +82,6 @@ body, html {
 
 html {
   font-size: 10px; }
-
-.p1Container {
-  background: red;
-  width: 100%;
-  height: 100vh; }
 
 .twitter {
   width: 20px;
@@ -126,3 +117,83 @@ html {
   .facebook:hover * {
     transition: all 0.1s ease;
     opacity: 0.7; }
+
+.p1Container {
+  height: 86vh;
+  width: 100vw;
+  position: relative;
+  padding: 2.2rem 2.8rem; }
+
+.p1Background {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(154deg, rgba(33, 86, 184, 0.99) 13%, rgba(33, 112, 176, 0.99) 100%);
+  box-shadow: inset 0 0 6px 0 rgba(0, 0, 0, 0.4);
+  z-index: -1; }
+
+.mainTextContainer > * {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  text-align: center; }
+
+h1 {
+  font-family: CamphorStd-Medium;
+  font-size: 3.6rem;
+  color: #FFFFFF;
+  margin-top: 5.5rem; }
+
+h2 {
+  font-family: CamphorStd-Regular;
+  font-size: 2.8rem;
+  color: #E4E3FF;
+  margin-top: 2.5rem; }
+
+.logoContainer {
+  display: flex; }
+
+.logoIcon {
+  display: inline-block;
+  border-radius: 100%;
+  background: white;
+  padding: 10px;
+  margin-right: 16px; }
+
+.logoTextContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0.8px 0; }
+
+.logoTextFont {
+  letter-spacing: 1.4px;
+  font-family: CamphorStd-Regular;
+  color: #ffffff;
+  font-size: 14px; }
+
+.StripeElement {
+  background-color: white;
+  height: 40px;
+  padding: 10px 12px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease; }
+
+.StripeElement--focus {
+  box-shadow: 0 1px 3px 0 #cfd7df; }
+
+.StripeElement--invalid {
+  border-color: #fa755a; }
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important; }
+
+form {
+  width: 400px;
+  border: 2px solid gold; }
+
+input {
+  display: block; }

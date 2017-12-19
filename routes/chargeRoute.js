@@ -5,10 +5,19 @@ const stripe = require("stripe")("sk_test_ZiLvy2TwdYQdGkWqmiUzbWbZ");
 
 module.exports = app => {
   app.post("/charge", async (req, res) => {
+    if (req.body.stripeCoupon === "melonhead") {
+      var customerCoupon = "2PoundsOff";
+    } else {
+      var customerCoupon = "";
+    }
     stripe.customers.create(
       {
         email: req.body.stripeEmail,
-        source: req.body.stripeToken
+        source: req.body.stripeToken,
+        description: req.body.stripeName,
+        metadata: {
+          coupon: customerCoupon
+        }
       },
       function(err, customer) {
         if (err) {
@@ -17,15 +26,15 @@ module.exports = app => {
             message: "Error"
           });
         } else {
-          const { id } = customer;
           stripe.subscriptions.create(
             {
-              customer: id,
+              customer: customer.id,
               items: [
                 {
                   plan: "basicMonthly"
                 }
-              ]
+              ],
+              coupon: customer.metadata.coupon
             },
             function(err, subscription) {
               console.log(err);

@@ -81,6 +81,12 @@ __webpack_require__(2);
 
 var _bling = __webpack_require__(3);
 
+var _elements = __webpack_require__(4);
+
+var _elements2 = _interopRequireDefault(_elements);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 /***/ }),
 /* 2 */
 /***/ (function(module, exports) {
@@ -114,6 +120,81 @@ NodeList.prototype.on = NodeList.prototype.addEventListener = function (name, fn
 
 exports.$ = $;
 exports.$$ = $$;
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var stripe = Stripe("pk_test_WMEN1Ko6Pb36QwPGdf4gmRD5");
+var elements = stripe.elements();
+
+var style = {
+  base: {
+    color: "#32325d",
+    lineHeight: "18px",
+    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+    fontSmoothing: "antialiased",
+    fontSize: "16px",
+    "::placeholder": {
+      color: "#aab7c4"
+    }
+  },
+  invalid: {
+    color: "#fa755a",
+    iconColor: "#fa755a"
+  }
+};
+
+var card = elements.create("card", {
+  style: style,
+  hidePostalCode: true
+});
+card.mount("#card-element");
+console.log(card, "card");
+
+// Handle real-time validation errors from the card Element.
+card.addEventListener("change", function (event) {
+  var displayError = document.getElementById("card-errors");
+  if (event.error) {
+    displayError.textContent = event.error.message;
+  } else {
+    displayError.textContent = "";
+  }
+});
+
+// Handle form submission
+var form = document.getElementById("payment-form");
+console.log(form, "form");
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  stripe.createToken(card).then(function (result) {
+    if (result.error) {
+      // Inform the user if there was an error
+      var errorElement = document.getElementById("card-errors");
+      errorElement.textContent = result.error.message;
+    } else {
+      // Send the token to your server
+      stripeTokenHandler(result.token);
+    }
+  });
+});
+
+var stripeTokenHandler = function stripeTokenHandler(token) {
+  // Insert the token ID into the form so it gets submitted to the server
+  var form = document.getElementById("payment-form");
+  var hiddenInput = document.createElement("input");
+  hiddenInput.setAttribute("type", "hidden");
+  hiddenInput.setAttribute("name", "stripeToken");
+  hiddenInput.setAttribute("value", token.id);
+  form.appendChild(hiddenInput);
+
+  // Submit the form
+  form.submit();
+};
 
 /***/ })
 /******/ ]);

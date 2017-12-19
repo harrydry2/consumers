@@ -4,6 +4,8 @@ script.
     window.location.protocol = "https";
   }
 
+include mixins/logo
+
 doctype html
 html(lang='en')
   head
@@ -12,18 +14,21 @@ html(lang='en')
     meta(http-equiv='X-UA-Compatible', content='ie=edge')
     link(rel='stylesheet', href='/dist/bundle.css')
     title Sites For Musicians
+    script(src="https://js.stripe.com/v3/")
   body
-  form(action="/charge" method="POST")
-    script(
-      src="https://checkout.stripe.com/checkout.js" 
-      class="stripe-button" 
-      data-key="pk_test_WMEN1Ko6Pb36QwPGdf4gmRD5" 
-      data-amount="449"     
-      data-name="Websites For Artists"
-      data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-      data-locale="auto"
-      data-currency="GBP"
-      data-zip-code="false"
-    )         
-    block scripts
-      script(src="/dist/bundle.js")
+    .p1Container
+      .p1Background
+      +logo
+      .mainTextContainer
+        h1 Simple, All Inclusive Pricing
+        h2 Order now, and you’re site will be ready in 24 hours
+
+    form(action="/charge" method="POST" id="payment-form")
+      input(type="text" name="stripeEmail" class="formInput" placeholder="Email Address")
+      input(type="text" name="stripeName" class="formInput" placeholder="Name")
+      #card-element
+      #card-errors(role="alert")
+      input(type="text" name="stripeCoupon" class="formInput" placeholder="Enter a Coupon Code")    
+      button Pay        
+      block scripts
+        script(src="/dist/bundle.js")
