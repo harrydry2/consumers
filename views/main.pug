@@ -4,7 +4,9 @@ script.
     window.location.protocol = "https";
   }
 
-include mixins/logo
+include mixins/_logo
+include mixins/_priceContainer
+
 
 doctype html
 html(lang='en')
@@ -19,16 +21,41 @@ html(lang='en')
     .p1Container
       .p1Background
       +logo
-      .mainTextContainer
+      .mainContainer
         h1 Simple, All Inclusive Pricing
         h2 Order now, and you’re site will be ready in 24 hours
-
-    form(action="/charge" method="POST" id="payment-form")
-      input(type="text" name="stripeEmail" class="formInput" placeholder="Email Address")
-      input(type="text" name="stripeName" class="formInput" placeholder="Name")
-      #card-element
-      #card-errors(role="alert")
-      input(type="text" name="stripeCoupon" class="formInput" placeholder="Enter a Coupon Code")    
-      button Pay        
+        +priceContainer
+    .modalOuterContainer
+      .modalInnerContainer
+        .modalInnerTitleContainer
+          div.miTitle.header The Original Plan
+          div.miTitle.plan $11 / mo
+        form.modalInnerInnerContainer(action="/charge" method="POST" id="payment-form")
+          .mIICHeader Details
+          .detailsContainer
+            input(type="text" name="stripeName" class="formInput" placeholder="Full Name")
+            input(type="text" name="stripeEmail" class="formInput" placeholder="Email Address")
+          #card-element
+          #card-errors(role="alert")
+          .mIICHeader Charges
+          .chargesContainer
+            .lightCharge Price
+            .lightCharge $11.00
+          .chargesContainer.chargesContainerHidden
+            .lightCharge.hiddenCharge Discount
+            .lightCharge.hiddenCharge 60% off forever            
+          div.chargesContainer.noBorderBottom
+            .lightCharge Amount Due
+            .heavyCharge $11.00
+          .couponContainer             
+            div.mIICHeader.mIICCoupon Enter a Coupon Code
+            .couponInputContainer
+              input(type="text" name="stripeCoupon" class="formInput couponInput" placeholder="Coupon")
+              != h.icon('refresh')
+              div.couponFM               
+          button.mIButton Buy Now
+          .sslContainer
+            != h.icon('padlock')
+            .sslText Secure SSL Payment via Stripe
       block scripts
         script(src="/dist/bundle.js")

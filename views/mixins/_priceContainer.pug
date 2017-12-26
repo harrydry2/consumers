@@ -1,0 +1,30 @@
+mixin priceContainer()
+  .priceContainer
+    .pcHeader THE ORIGINAL PLAN
+    .pcDollarContainer
+      .pcDollar $
+      .pcPrice 11
+      .pcPricePerMonth
+        |/ 
+        .pcExtension mo
+    .pcBox
+      span.pcBoxHeader!= h.icon('computer-desktop')
+        | Free Domain & Hosting
+      .pcBoxSubtitle A custom domain name & hosting is included in this plan
+    .pcBox
+      span.pcBoxHeader!= h.icon('pcMic')
+        | New Music. No Problems
+      .pcBoxSubtitle Want your site updated? Let me know and I'm more than happy to make changes. 
+    .pcBox
+      span.pcBoxHeader!= h.icon('mobile-devices')
+        | Mobile Optimised
+      .pcBoxSubtitle Our websites look great across all screen sizes. 
+    .pcBox
+      span.pcBoxHeader!= h.icon('chart')
+        | Site Analytics and Email List
+      .pcBoxSubtitle A custom domain name & hosting is included in this plan
+    .pcBox
+      span.pcBoxHeader!= h.icon('pcMic')
+        | Free Domain & Hosting
+      .pcBoxSubtitle A custom domain name & hosting is included in this plan
+    .pcButton Get Started Now

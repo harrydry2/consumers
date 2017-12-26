@@ -60,41 +60,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(1);
-
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-__webpack_require__(2);
-
-var _bling = __webpack_require__(3);
-
-var _elements = __webpack_require__(4);
-
-var _elements2 = _interopRequireDefault(_elements);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -122,24 +92,60 @@ exports.$ = $;
 exports.$$ = $$;
 
 /***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(2);
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(3);
+
+var _bling = __webpack_require__(0);
+
+var _elements = __webpack_require__(4);
+
+var _elements2 = _interopRequireDefault(_elements);
+
+__webpack_require__(5);
+
+__webpack_require__(6);
+
+__webpack_require__(7);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var stripe = Stripe("pk_test_WMEN1Ko6Pb36QwPGdf4gmRD5");
+var stripe = Stripe("pk_live_SYAmCo2SAlL03XizufhUazZk");
 var elements = stripe.elements();
 
 var style = {
   base: {
-    color: "#32325d",
+    color: "#36434D",
     lineHeight: "18px",
-    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+    fontFamily: "CamphorStd-Regular",
     fontSmoothing: "antialiased",
-    fontSize: "16px",
+    fontSize: "12px",
     "::placeholder": {
-      color: "#aab7c4"
+      color: "#A09EA2"
     }
   },
   invalid: {
@@ -195,6 +201,103 @@ var stripeTokenHandler = function stripeTokenHandler(token) {
   // Submit the form
   form.submit();
 };
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _bling = __webpack_require__(0);
+
+var modalOuter = (0, _bling.$)(".modalOuterContainer");
+var modalInner = (0, _bling.$)(".modalInnerContainer");
+var pcButton = (0, _bling.$)(".pcButton");
+
+pcButton.on("click", modalOpen);
+window.on("click", closeModalOnClick);
+document.on("keydown", closeModalOnEsc);
+
+function modalOpen() {
+  modalOuter.style.display = "block";
+  setTimeout(function () {
+    return modalInner.style.opacity = "1";
+  }, 50);
+  document.body.classList.add("modalNoScroll");
+}
+
+function closeModalOnClick(e) {
+  if (e.target == modalOuter) {
+    modalInner.style.opacity = "0";
+    document.body.classList.remove("modalNoScroll");
+    setTimeout(function () {
+      return modalOuter.style.display = "none";
+    }, 100);
+  }
+}
+
+function closeModalOnEsc(e) {
+  if (e.keyCode == 27) {
+    modalInner.style.opacity = "0";
+    document.body.classList.remove("modalNoScroll");
+    setTimeout(function () {
+      return modalOuter.style.display = "none";
+    }, 100);
+  }
+}
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _bling = __webpack_require__(0);
+
+var formInputs = (0, _bling.$$)(".formInput");
+
+formInputs.forEach(function (input) {
+  input.on("keypress", function (e) {
+    if (e.keyCode === 13) {
+      e.preventDefault();
+    }
+  });
+});
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _bling = __webpack_require__(0);
+
+var refresh = (0, _bling.$)(".refreshIcon");
+var couponInput = (0, _bling.$)(".couponInput");
+var chargesContainerHidden = (0, _bling.$)(".chargesContainerHidden");
+var heavyCharge = (0, _bling.$)(".heavyCharge");
+var plan = (0, _bling.$)(".plan");
+var couponFM = (0, _bling.$)(".couponFM");
+
+refresh.on("click", function (e) {
+  if (couponInput.value === "kidsleepy") {
+    chargesContainerHidden.style.display = "flex";
+    setTimeout(function () {
+      couponFM.innerHTML = "Success!";
+      couponFM.style.color = "#3ECF8E";
+      chargesContainerHidden.style.height = "4rem";
+      chargesContainerHidden.style.opacity = "1";
+      heavyCharge.innerHTML = "$4.40";
+      plan.innerHTML = "$4.40";
+    }, 100);
+  } else {
+    couponFM.innerHTML = "Invalid Coupon Code!";
+    couponFM.style.color = "red";
+  }
+});
 
 /***/ })
 /******/ ]);

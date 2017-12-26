@@ -3,7 +3,7 @@ const path = require("path");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const expressStaticGzip = require("express-static-gzip");
-const fs = require("fs");
+const helpers = require("./helpers");
 
 // mongoose.Promise = global.Promise;
 // mongoose.connect(
@@ -13,7 +13,7 @@ const fs = require("fs");
 
 const app = express();
 
-// app.locals.format = require("date-fns/format");
+app.locals.format = require("date-fns/format");
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use((req, res, next) => {
-  res.locals.icon = name => fs.readFileSync(`./public/icons/${name}.svg`);
+  res.locals.h = helpers;
   next();
 });
 
@@ -43,5 +43,5 @@ http: app.get("/", (req, res) => {
   res.render("main");
 });
 
-const PORT = process.env.PORT || 1999;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log("listening"));

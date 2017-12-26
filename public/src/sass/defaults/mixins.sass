@@ -1,0 +1,15 @@
+=placeholder
+  &::-webkit-input-placeholder
+    @content
+  &:-moz-placeholder
+    @content
+  &::-moz-placeholder
+    @content
+  &:-ms-input-placeholder
+    @content
+
+=svgHover
+  &:hover
+    & *
+      @content
+      transition: all .25s ease

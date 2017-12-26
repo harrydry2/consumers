@@ -1,12 +1,13 @@
 const mongoose = require("mongoose");
 // const Email = mongoose.model("Email");
 var nodemailer = require("nodemailer");
-const stripe = require("stripe")("sk_test_ZiLvy2TwdYQdGkWqmiUzbWbZ");
+const stripe = require("stripe")("sk_live_cjmhsVYIvbXn6ybJokgQGwyk");
+const helpers = require("../helpers");
 
 module.exports = app => {
   app.post("/charge", async (req, res) => {
-    if (req.body.stripeCoupon === "melonhead") {
-      var customerCoupon = "2PoundsOff";
+    if (req.body.stripeCoupon === "kidsleepy") {
+      var customerCoupon = "60off";
     } else {
       var customerCoupon = "";
     }
@@ -31,19 +32,43 @@ module.exports = app => {
               customer: customer.id,
               items: [
                 {
-                  plan: "basicMonthly"
+                  plan: "11Plan"
                 }
               ],
               coupon: customer.metadata.coupon
             },
-            function(err, subscription) {
-              console.log(err);
-              console.log(subscription);
+            async function(err, subscription) {
+              var brand = customer.sources.data[0].brand;
+              var last4 = customer.sources.data[0].last4;
+              var name = customer.description.replace(" ", "");
+              if (subscription.discount) {
+                const percentOff =
+                  subscription.discount.coupon.percent_off * (1 / 100);
+                const chargeNoDot = (
+                  subscription.items.data[0].plan.amount -
+                  percentOff * subscription.items.data[0].plan.amount
+                ).toString();
+                const dollar = helpers.numberToDollar(chargeNoDot);
+                res.render("paymentSuccess", {
+                  brand,
+                  last4,
+                  name,
+                  dollar
+                });
+              } else {
+                const chargeNoDot = await subscription.items.data[0].plan.amount.toString();
+                const dollar = await helpers.numberToDollar(chargeNoDot);
+                res.render("paymentSuccess", {
+                  brand,
+                  last4,
+                  name,
+                  dollar
+                });
+              }
             }
           );
         }
       }
     );
-    res.redirect("/");
   });
 };

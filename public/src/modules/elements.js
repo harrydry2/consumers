@@ -1,15 +1,15 @@
-const stripe = Stripe("pk_test_WMEN1Ko6Pb36QwPGdf4gmRD5");
+const stripe = Stripe("pk_live_SYAmCo2SAlL03XizufhUazZk");
 const elements = stripe.elements();
 
 const style = {
   base: {
-    color: "#32325d",
+    color: "#36434D",
     lineHeight: "18px",
-    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+    fontFamily: "CamphorStd-Regular",
     fontSmoothing: "antialiased",
-    fontSize: "16px",
+    fontSize: "12px",
     "::placeholder": {
-      color: "#aab7c4"
+      color: "#A09EA2"
     }
   },
   invalid: {

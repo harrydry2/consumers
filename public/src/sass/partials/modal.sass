@@ -1,0 +1,152 @@
+.modalNoScroll
+  overflow: hidden
+
+.modalOuterContainer
+  display: none
+  position: fixed
+  z-index: 1
+  left: 0
+  top: 0
+  height: 100%
+  width: 100%
+  overflow: auto
+  background-color: rgba(0,0,0,0.5)
+
+.modalInnerContainer
+  background: #ffffff
+  opacity: 0
+  transition: all .5s
+  width: 50rem 
+  margin: 4.2rem auto 0 auto
+
+.modalInnerTitleContainer
+  display: flex
+  width: 100%
+  flex-direction: column
+  align-items: center
+  border-bottom: 1px solid #E0E7ED
+
+.miTitle
+  font-family: CamphorStd-Medium
+  font-size: 1.9rem
+  margin-top: 2.9rem
+  color: $pC
+  &.plan
+    color: $green
+    margin: 1.5rem 0 2.8rem 0
+
+.modalInnerInnerContainer
+  padding: 0rem 3rem 2.2rem 3rem
+  .mIICHeader
+    font-family: CamphorStd-Regular
+    font-size: 1.6rem
+    color: $pC
+    margin: 2.5rem 0 1.2rem 0
+  .detailsContainer
+    display: flex
+    justify-content: space-between
+
+.formInput
+  width: 21rem
+  font-size: 1.2rem
+  background: #FBFBFD
+  border-radius: 4px
+  border: 1px solid #E4E6F0
+  padding: 1rem
+  font-family: CamphorStd-Regular
+  transition: all .25s ease
+  &:focus
+    border: 1px solid $green
+  +placeholder
+    color: $sC
+
+.chargesContainer
+  border-bottom: 1px solid #E0E7ED
+  display: flex
+  justify-content: space-between
+  padding: 1.3rem 0
+  &:nth-child(6)
+    padding: 0.8rem 0 1.2rem 0
+  .lightCharge
+    font-family: CamphorStd-Regular
+    font-size: 1.4rem
+    color: $sC
+  .heavyCharge
+    font-family: CamphorStd-Bold
+    font-size: 1.4rem
+    color: $green
+
+.chargesContainerHidden
+  display: none
+  padding: 0
+  opacity: 0
+  height: 0
+  transition: all 0.4s linear
+  align-items: center
+
+.noBorderBottom
+  border-bottom: none !important
+
+
+.couponContainer
+  display: flex
+  justify-content: space-between
+  margin: 2rem 0 0rem 0
+  align-items: center  
+  .mIICCoupon
+    margin: 0 !important
+  .couponInputContainer
+    position: relative
+    .couponInput
+      padding-right: 3rem
+    .refreshIcon
+      position: absolute
+      top: 30%
+      right: 5%
+      cursor: pointer
+    .couponFM
+      position: absolute
+      top: 110%
+      left: 3%
+      font-size: 1.2rem
+      font-family: CamphorStd-Medium
+
+.mIButton
+  width: 100%
+  display: flex
+  align-items: center
+  justify-content: center
+  font-family: CamphorStd-Bold
+  font-size: 1.6rem
+  color: #FFFFFF
+  padding: 1.8rem 0
+  border: none 
+  background: $green
+  margin-top: 2.9rem
+  border-radius: 4px
+  &:hover
+    opacity: 0.9
+    cursor: pointer
+    transition: all 0.5s
+
+.sslContainer
+  margin-top: 2.6rem
+  display: flex
+  justify-content: center
+  font-family: CamphorStd-Regular
+  font-size: 12px
+  color: $green
+  align-items: center
+
+.sslText
+  transform: translateY(1px)
+
+
+
+
+
+
+
+
+  
+
