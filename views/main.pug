@@ -17,12 +17,18 @@ html(lang='en')
     link(rel='stylesheet', href='/dist/bundle.css')
     title Sites For Musicians
     script(src="https://js.stripe.com/v3/")
+    script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-91909305-4')
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-91909305-4');
   body
     .p1Container
       .p1Background
       +logo
       .mainContainer
-        h1 Simple, All Inclusive Pricing
+        h1 High Quality Websites for Musicians
         h2 Order now, and you’re site will be ready in 24 hours
         +priceContainer
     .modalOuterContainer
