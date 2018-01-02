@@ -6,8 +6,40 @@ const helpers = require("../helpers");
 
 module.exports = app => {
   app.post("/charge", async (req, res) => {
-    if (req.body.stripeCoupon === "kidsleepy") {
-      var customerCoupon = "60off";
+    if (
+      req.body.stripeCoupon === "KIDSLEEPY1" ||
+      req.body.stripeCoupon === "TEDADDIC2" ||
+      req.body.stripeCoupon === "SUAVEYOUNGIN3" ||
+      req.body.stripeCoupon === "CAUTIOUSKIERAN4" ||
+      req.body.stripeCoupon === "AQUIFER5" ||
+      req.body.stripeCoupon === "PROFECY6" ||
+      req.body.stripeCoupon === "LIPSTICISM7" ||
+      req.body.stripeCoupon === "LANKSTON8" ||
+      req.body.stripeCoupon === "CHRISTIANMCDEPRESSION9" ||
+      req.body.stripeCoupon === "THEFORUM10" ||
+      req.body.stripeCoupon === "JOHNIEPEE11" ||
+      req.body.stripeCoupon === "ELEMENTALS12" ||
+      req.body.stripeCoupon === "JAYDEN13" ||
+      req.body.stripeCoupon === "REAMS14" ||
+      req.body.stripeCoupon === "RHYMEGURU15" ||
+      req.body.stripeCoupon === "TURQUOISEPRINCE16" ||
+      req.body.stripeCoupon === "NIKOROSE17" ||
+      req.body.stripeCoupon === "PEDWOE18" ||
+      req.body.stripeCoupon === "ANDREALETYBURNS19" ||
+      req.body.stripeCoupon === "WILDYEAR20" ||
+      req.body.stripeCoupon === "IOANADOBROIU21" ||
+      req.body.stripeCoupon === "KOGZ22" ||
+      req.body.stripeCoupon === "SPENELO23" ||
+      req.body.stripeCoupon === "BFAST24" ||
+      req.body.stripeCoupon === "KALEOKOHLSON25" ||
+      req.body.stripeCoupon === "KAYE26" ||
+      req.body.stripeCoupon === "IKASMILLIS27" ||
+      req.body.stripeCoupon === "NERVE28" ||
+      req.body.stripeCoupon === "YUNGMILO29" ||
+      req.body.stripeCoupon === "YUNGHOMAY30" ||
+      req.body.stripeCoupon === "YUNGGORYO31"
+    ) {
+      var customerCoupon = "25off";
     } else {
       var customerCoupon = "";
     }
@@ -32,7 +64,7 @@ module.exports = app => {
               customer: customer.id,
               items: [
                 {
-                  plan: "11Plan"
+                  plan: "14Plan"
                 }
               ],
               coupon: customer.metadata.coupon
