@@ -69,6 +69,10 @@ a {
   font-family: CamphorStd-Thin;
   src: url("/fonts/CamphorStd-Thin.woff2") format("woff"); }
 
+@font-face {
+  font-family: Perpetua;
+  src: url("/fonts/Perpetua.ttf") format("ttf"); }
+
 body, html {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
@@ -134,132 +138,29 @@ html {
     fill: #36434D;
     transition: all .25s ease; }
 
-.p1Container {
-  height: 86vh;
-  width: 100vw;
-  position: relative;
-  padding: 2.2rem 2.8rem; }
-
-.p1Background {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-image: linear-gradient(154deg, rgba(33, 86, 184, 0.99) 13%, rgba(33, 112, 176, 0.99) 100%);
-  box-shadow: inset 0 0 6px 0 rgba(0, 0, 0, 0.4);
-  z-index: -1; }
-
-.mainContainer h1, .mainContainer h2 {
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-  text-align: center; }
-
-h1 {
-  font-family: CamphorStd-Medium;
-  font-size: 3.6rem;
-  color: #FFFFFF;
-  margin-top: 5.5rem; }
-
-h2 {
-  font-family: CamphorStd-Regular;
-  font-size: 2.8rem;
-  color: #E4E3FF;
-  margin-top: 2.5rem; }
-
-.priceContainer {
-  max-width: 320px;
-  border-radius: 8px;
-  background-color: #fff;
-  padding: 3rem 3rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+body {
   text-align: center;
-  margin: 5.4rem auto 5rem auto; }
+  font-size: 18px;
+  line-height: 1.45; }
 
-.pcHeader {
-  font-family: CamphorStd-Bold;
-  font-size: 1.8rem;
-  color: #3ECF8E;
-  letter-spacing: 0.7px; }
-
-.pcDollarContainer {
-  margin-top: 2.8rem;
-  display: flex;
-  justify-content: center; }
-  .pcDollarContainer .pcDollar {
-    font-family: CamphorStd-Regular;
-    font-size: 1.6rem;
-    color: #868E96;
-    transform: translate(-5px, 4px); }
-  .pcDollarContainer .pcPrice {
-    font-family: CamphorStd-Medium;
-    font-size: 4.6rem;
-    color: #36434D; }
-  .pcDollarContainer .pcPricePerMonth {
-    font-family: CamphorStd-Regular;
-    font-size: 1.8rem;
-    color: #868E96;
-    align-self: flex-end;
-    transform: translate(6px, -10px); }
-    .pcDollarContainer .pcPricePerMonth .pcExtension {
-      display: inline-block;
-      transform: translateY(2.5px); }
-
-.pcBox {
-  text-align: left;
-  margin-top: 2.1rem; }
-  .pcBox:nth-child(3) {
-    margin-top: 2.6rem !important; }
-  .pcBox .pcBoxHeader {
-    font-family: CamphorStd-Medium;
-    font-size: 16px;
-    color: #36434D;
-    display: flex;
-    align-items: center; }
-  .pcBox .pcBoxSubtitle {
-    font-family: CamphorStd-Regular;
-    font-size: 13px;
-    color: #A09EA2;
-    line-height: 15px;
-    padding: 2px 0 0 2.6rem; }
-
-.pcButton {
-  font-family: CamphorStd-Bold;
-  font-size: 2.1rem;
-  color: #FFFFFF;
-  display: flex;
+header {
   justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  background: #3ECF8E;
-  margin-top: 3rem;
-  border-radius: 8px; }
-  .pcButton:hover {
-    opacity: 0.96;
-    cursor: pointer;
-    transform: translateY(-1px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18); }
-
-.logoContainer {
+  padding: 24px 0px 10px 0px;
+  letter-spacing: 4.5px;
+  text-transform: uppercase;
   display: flex; }
 
-.logoIcon {
-  display: inline-block;
-  border-radius: 100%;
-  background: white;
-  padding: 10px;
-  margin-right: 16px; }
+p {
+  font-family: Perpetua; }
 
-.logoTextContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: 0.8px 0; }
+.desktop_only {
+  display: block; }
 
-.logoTextFont {
-  letter-spacing: 1.4px;
-  font-family: CamphorStd-Regular;
-  color: #ffffff;
-  font-size: 14px; }
+.mobile_only {
+  display: none; }
+
+.br {
+  font-size: 28.5px; }
 
 .modalNoScroll {
   overflow: hidden; }
@@ -425,6 +326,36 @@ h2 {
 
 .StripeElement--webkit-autofill {
   background-color: #fefde5 !important; }
+
+.typed-cursor {
+  opacity: 1;
+  -webkit-animation: blink 0.7s infinite;
+  -moz-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinites; }
+
+@keyframes blink {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-moz-keyframes blink {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 
 .thankYouPageBackground {
   background-color: #f3f3f2;

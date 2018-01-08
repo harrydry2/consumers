@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.config.js",    
+    "build": "webpack --config webpack.config.js",
     "assets": "webpack --config webpack.config.js -w",
     "watch": "nodemon ./server.js --ignore public/",
     "dev": "concurrently \"npm run watch\" \"npm run assets\"",
@@ -45,6 +45,7 @@
     "mongoose": "^4.13.7",
     "nodemailer": "^4.4.1",
     "pug": "^2.0.0-rc.4",
-    "stripe": "^5.4.0"
+    "stripe": "^5.4.0",
+    "typed.js": "^2.0.6"
   }
 }
