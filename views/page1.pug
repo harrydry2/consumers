@@ -1,0 +1,19 @@
+extends main
+
+include mixins/_header
+include mixins/pages/page1/_p1TextSkip
+include mixins/pages/page1/_p1Highlights
+include mixins/pages/page1/_p1Text
+include mixins/_pageTurner
+
+block content
+  +header('(skip)', 'CONSUMERS')
+  +pIntroduction()
+  +pIntroductionSkip()    
+  +hIntroduction()
+  +pageTurner('1/11')
+  block scripts
+    script(src="https://code.jquery.com/jquery-3.2.1.min.js")
+    script(src="/dist/typed.js")
+    script(src="/dist/jQueryColor.js")          
+    script(src="/dist/bundle.js")

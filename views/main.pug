@@ -1,12 +1,3 @@
-script.
-  var host = "www.websitesformusicians.co";
-  if ((host == window.location.host) && (window.location.protocol != "https:")) {
-    window.location.protocol = "https";
-  }
-
-include mixins/_checkout
-
-
 doctype html
 html(lang='en')
   head
@@ -15,83 +6,5 @@ html(lang='en')
     meta(http-equiv='X-UA-Compatible', content='ie=edge')
     link(rel='stylesheet', href='/dist/bundle.css')
     title Consumers
-    script(src="https://js.stripe.com/v3/")
-    script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-91909305-4')
-    script.
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-91909305-4');
   body
-    header CONSUMERS
-    #typed-strings
-      p
-        | Forget originality.^500 The term is garbage.^500 Ideas are not
-        br.mobile_only
-        |  original.^600 
-        br.desktop_only
-        a.tom(href='http://www.bbc.co.uk/sport', target='_blank')
-          | Ideas are made from 
-          i stuff.
-          | ^700 They are made
-          br.mobile_only
-          |  from every little
-          br.desktop_only
-          |  thing you have ever put inside your head.^800
-        br.br
-        br.br
-        | This book is about the people who put 
-        i stuff
-        |  inside their
-        br.mobile_only
-        |  head.^700 
-        br.desktop_only
-        | I call them consumers.^700 
-        a.jim(href='http://www.swiss-miss.com/2009/01/nothing-is-original.html', target='_blank')
-          | They devour old films,^100 
-          br.desktop_only
-          br.mobile_only
-          |  new films,^100 music,^100 books,^100 random conversations...
-        br.desktop_only
-        | ^1000 First 
-        br.mobile_only
-        | they consume^100 
-        a.austin(href='http://austinkleon.com/steal/', target='_blank') and then they steal what they have consumed.^1200
-        br.br
-        a.kirby(href='https://www.youtube.com/watch?v=nJPERZDfyWc', target='_blank')  Everything is a remix.^700
-        |  Being a consumer is just making 
-        br.desktop_only
-        |  sure
-        br.mobile_only
-        |  you know all the best tracks so your remix sounds good.^1000
-        br.br 
-        br.br
-        a.mark1(href='https://www.brainpickings.org/2012/05/10/mark-twain-helen-keller-plagiarism-originality/', target='_blank')
-          | In writing this book I have drawn consciously and 
-          br.mobile_only
-          | unconsciously
-          br.desktop_only
-          |  from  one million outside sources.
-        | ^1100 
-        a.james(href='https://www.brainpickings.org/2012/05/04/a-technique-for-producing-ideas-young/', target='_blank')
-          | My ideas 
-          br.mobile_only
-          | are nothing more
-          br.desktop_only
-          |  than a new combination of old elements.^1100
-        br.mobile_only
-        |  I have decided to
-        br.desktop_only
-        |  highlight the text I have stolen 
-        br.mobile_only
-        |  to demonstrate this principle.^800
-        br.desktop_only
-        |  If any good author
-        br.mobile_only
-        |  was honest their work would look like this.
-    span#typed
-    +checkout
-    block scripts
-      script(src="https://code.jquery.com/jquery-3.2.1.min.js")
-      script(src="/dist/typed.js")    
-      script(src="/dist/bundle.js")
+  block content

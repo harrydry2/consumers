@@ -1,22 +1,22 @@
 import { $, $$ } from "./bling";
 
-const modalOuter = $(".modalOuterContainer");
-const modalInner = $(".modalInnerContainer");
-const pcButton = $(".pcButton");
+const modalOuter = $(".mOuterContainer");
+const m1Inner = $(".m1InnerContainer");
+const buyNow = $(".buyNow");
 
-pcButton.on("click", modalOpen);
+buyNow.on("click", modalOpen);
 window.on("click", closeModalOnClick);
 document.on("keydown", closeModalOnEsc);
 
 function modalOpen() {
-  modalOuter.style.display = "block";
-  setTimeout(() => (modalInner.style.opacity = "1"), 50);
+  modalOuter.style.display = "flex";
+  setTimeout(() => (m1Inner.style.opacity = "1"), 50);
   document.body.classList.add("modalNoScroll");
 }
 
 function closeModalOnClick(e) {
   if (e.target == modalOuter) {
-    modalInner.style.opacity = "0";
+    m1Inner.style.opacity = "0";
     document.body.classList.remove("modalNoScroll");
     setTimeout(() => (modalOuter.style.display = "none"), 100);
   }
@@ -24,7 +24,7 @@ function closeModalOnClick(e) {
 
 function closeModalOnEsc(e) {
   if (e.keyCode == 27) {
-    modalInner.style.opacity = "0";
+    m1Inner.style.opacity = "0";
     document.body.classList.remove("modalNoScroll");
     setTimeout(() => (modalOuter.style.display = "none"), 100);
   }

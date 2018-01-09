@@ -1,18 +1,29 @@
 body
+  height: 100vh
   text-align: center
   font-size: 18px
   line-height: 1.45
-  // font-family: Perpetua
+  font-family: PerpetuaStdR
+  text-align: center
+  color: $black
 
-header
+.headerContainer
   justify-content: center
   padding: 24px 0px 10px 0px
-  letter-spacing: 4.5px
-  text-transform: uppercase
   display: flex
+  align-items: center
+  .hcCenterMargin
+    margin: 0 100px
+    letter-spacing: 4.5px
+    text-transform: uppercase
+  .hcSkip
+    cursor: pointer
+    transform: translateY(-2px)
+  .hcSkipBlank
+    visibility: hidden
 
-p
-  font-family: Perpetua  
+.italic
+  font-family: PerpetuaStdRItalic
 
 .desktop_only 
   display: block
@@ -20,8 +31,94 @@ p
 .mobile_only 
   display: none
 
-.br 
-  font-size: 28.5px
+.break
+  margin-top: 18px
+  display: block
+  content: ""
+
+/* HIGHLGIHTS SECTION
+
+.wraphighlights
+  max-width: 500px
+  margin: 0 auto
+
+div
+  ul
+    display: flex
+    list-style-type: none
+    margin: 18px 0px 18px 0px
+  li
+    flex: 1
+
+/* A TAGS
+a
+  color: $black
+  text-decoration: none !important
+  &:visited
+    color: $black
+    text-decoration: none !important
+  &:hover
+    color: rgba(0, 0, 0, 0.75)
+    text-decoration: none !important
+  &:focus
+    color: $black
+    text-decoration: none !important
+
+.disableClick
+  pointer-events: none
+  position: relative
+
+#typed-strings1
+  // display: none  
+  display: block
+
+.buyNow
+  &:hover
+    cursor: pointer
+
+.typedStringsContainerSkip
+  display: none
+
+// skipAnimation
+.tscsActive
+  .tom
+    background-color: rgba(199, 220, 101, .7)
+  .jim
+    background-color: rgba(236, 208, 120, .7)
+  .austin
+    background-color: rgba(80, 197, 186, 0.7)
+  .kirby
+    background-color: rgba(237, 50, 147, 0.6)
+  .mark
+    background-color: rgba(239, 153, 87, 0.8)
+  .james
+    background-color: rgba(100,130,400,0.7)
+
+.whActive
+  .line1
+    background-color: rgba(199, 220, 101, .7)
+    opacity: 1 !important
+  .line2
+    background-color: rgba(236, 208, 120, .7)
+    opacity: 1 !important
+  .line3
+    background-color: rgba(80, 197, 186, 0.7)
+    opacity: 1 !important
+  .line4
+    background-color: rgba(237, 50, 147, 0.6)
+    opacity: 1 !important
+  .line5
+    background-color: rgba(239, 153, 87, 0.8)
+    opacity: 1 !important
+  .line6
+    background-color: rgba(100,130,400,0.7)
+    opacity: 1 !important
+
+.ptActive
+  opacity: 1 !important
+
+
+
 
 
 

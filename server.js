@@ -40,7 +40,7 @@ app.get(
 );
 
 http: app.get("/", (req, res) => {
-  res.render("main");
+  res.render("page1");
 });
 
 const PORT = process.env.PORT || 3000;
