@@ -4,13 +4,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const expressStaticGzip = require("express-static-gzip");
 const helpers = require("./helpers");
-
-// mongoose.Promise = global.Promise;
-// mongoose.connect(
-//   "mongodb://harrydry:DavidLuiz4@ds159676.mlab.com:59676/kidsleepy"
-// );
-// require("./models/Email.js");
-
+const routes = require("./routes/index");
 const app = express();
 
 app.locals.format = require("date-fns/format");
@@ -28,20 +22,7 @@ app.use((req, res, next) => {
   next();
 });
 
-require("./routes/chargeRoute")(app);
-
-app.get(
-  "/.well-known/acme-challenge/egWBM-tu6w-jKzqqC73sYp2d6bdmF3f_VcClU_N0PVk",
-  (req, res) => {
-    res.send(
-      "egWBM-tu6w-jKzqqC73sYp2d6bdmF3f_VcClU_N0PVk.ySvRCyz5X1vWf6gd6f64mxvZ3OzaXyluhZRwpDEy03M"
-    );
-  }
-);
-
-http: app.get("/", (req, res) => {
-  res.render("page1");
-});
+app.use("/", routes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log("listening"));

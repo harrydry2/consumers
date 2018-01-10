@@ -1,19 +1,20 @@
 extends main
 
-include mixins/_header
+include mixins/pages/page1/_p1Header
 include mixins/pages/page1/_p1TextSkip
 include mixins/pages/page1/_p1Highlights
 include mixins/pages/page1/_p1Text
-include mixins/_pageTurner
+include mixins/pages/page1/_p1PageTurner
 
 block content
-  +header('(skip)', 'CONSUMERS')
-  +pIntroduction()
-  +pIntroductionSkip()    
-  +hIntroduction()
-  +pageTurner('1/11')
-  block scripts
-    script(src="https://code.jquery.com/jquery-3.2.1.min.js")
-    script(src="/dist/typed.js")
-    script(src="/dist/jQueryColor.js")          
-    script(src="/dist/bundle.js")
+  body.page1
+    +p1Header()
+    +p1Text()
+    +p1TextSkip()    
+    +p1Highlights()
+    +p1PageTurner()
+    block scripts
+      script(src="https://code.jquery.com/jquery-3.2.1.min.js")
+      script(src="/dist/typed.js")
+      script(src="/dist/jQueryColor.js")          
+      script(src="/dist/bundle.js")

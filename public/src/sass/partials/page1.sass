@@ -1,40 +1,12 @@
-body
-  height: 100vh
-  text-align: center
-  font-size: 18px
-  line-height: 1.45
-  font-family: PerpetuaStdR
-  text-align: center
-  color: $black
-
-.headerContainer
-  justify-content: center
-  padding: 24px 0px 10px 0px
-  display: flex
-  align-items: center
-  .hcCenterMargin
-    margin: 0 100px
-    letter-spacing: 4.5px
-    text-transform: uppercase
-  .hcSkip
-    cursor: pointer
-    transform: translateY(-2px)
-  .hcSkipBlank
-    visibility: hidden
-
-.italic
-  font-family: PerpetuaStdRItalic
-
-.desktop_only 
-  display: block
-
-.mobile_only 
-  display: none
-
-.break
-  margin-top: 18px
-  display: block
-  content: ""
+// p1Header
+.hcCenterMargin
+  margin: 0 100px
+.hcSkip
+  cursor: pointer
+  transform: translateY(-2px)
+  letter-spacing: normal  
+.hcSkipBlank
+  visibility: hidden
 
 /* HIGHLGIHTS SECTION
 
@@ -69,15 +41,37 @@ a
   position: relative
 
 #typed-strings1
-  // display: none  
   display: block
-
-.buyNow
-  &:hover
-    cursor: pointer
 
 .typedStringsContainerSkip
   display: none
+
+// border-radius
+.tom
+  +br
+.jim
+  +br
+.austin
+  +br
+.kirby
+  +br
+.mark
+  +br
+.james
+  +br
+
+.p1line1
+  +br
+.p1line2
+  +br
+.p1line3
+  +br
+.p1line4
+  +br
+.p1line5
+  +br
+.p1line6
+  +br
 
 // skipAnimation
 .tscsActive
@@ -95,27 +89,37 @@ a
     background-color: rgba(100,130,400,0.7)
 
 .whActive
-  .line1
+  .p1line1
     background-color: rgba(199, 220, 101, .7)
     opacity: 1 !important
-  .line2
+  .p1line2
     background-color: rgba(236, 208, 120, .7)
     opacity: 1 !important
-  .line3
+  .p1line3
     background-color: rgba(80, 197, 186, 0.7)
     opacity: 1 !important
-  .line4
+  .p1line4
     background-color: rgba(237, 50, 147, 0.6)
     opacity: 1 !important
-  .line5
+  .p1line5
     background-color: rgba(239, 153, 87, 0.8)
     opacity: 1 !important
-  .line6
+  .p1line6
     background-color: rgba(100,130,400,0.7)
     opacity: 1 !important
 
 .ptActive
   opacity: 1 !important
+
+// p1PageTurner
+.p1ptContainer
+  display: flex
+  justify-content: center
+  align-items: center
+  color: $black
+
+.p1ptLeftButton
+  visibility: hidden
 
 
 

@@ -1,0 +1,16 @@
+extends main
+
+include mixins/pages/page2/_p2Header
+include mixins/pages/page2/_p2Text
+include mixins/pages/page2/_p2Highlights
+include mixins/pages/_pageTurnerShared
+
+block content
+  body.page2
+    +p2Header()
+    +p2Text()
+    +pageTurnerShared('/', '2', '/')
+    block scripts
+      script(src="https://code.jquery.com/jquery-3.2.1.min.js")
+      script(src="/dist/jQueryColor.js")          
+      script(src="/dist/bundle.js")

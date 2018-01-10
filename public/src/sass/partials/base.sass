@@ -1,26 +1,4 @@
-@font-face 
-  font-family: CamphorStd-Bold
-  src: url("/fonts/CamphorStd-Bold.woff2") format("woff")
-
-@font-face 
-  font-family: CamphorStd-Italic
-  src: url("/fonts/CamphorStd-Italic.woff2") format("woff")
-
-@font-face 
-  font-family: CamphorStd-Light
-  src: url("/fonts/CamphorStd-Light.woff2") format("woff")
-
-@font-face 
-  font-family: CamphorStd-Medium
-  src: url("/fonts/CamphorStd-Medium.woff2") format("woff")
-
-@font-face 
-  font-family: CamphorStd-Regular
-  src: url("/fonts/CamphorStd-Regular.woff2") format("woff")
-
-@font-face 
-  font-family: CamphorStd-Thin
-  src: url("/fonts/CamphorStd-Thin.woff2") format("woff")
+$black: #333333;
 
 @font-face 
   font-family: PerpetuaStdR
@@ -31,21 +9,26 @@
   src: url("/fonts/PerpetuaStdRItalic.woff2") format("woff")
 
 body, html
-  box-sizing: border-box
-  -webkit-font-smoothing: antialiased
-  -moz-osx-font-smoothing: grayscale
-  margin: 0
-  padding: 0
-
-*, *:before, *:after
-  box-sizing: inherit
-  outline: none !important
+  text-align: center
+  font-size: 18px
+  line-height: 1.45
+  font-family: PerpetuaStdR
+  color: $black
 
 html
   font-size: 10px
 
-$pC: #36434D;
-$sC: #A09EA2;
-$green: #3ECF8E;
-$black: #333333;
-$gold: #FFCB05;
+.italic
+  font-family: PerpetuaStdRItalic
+
+.desktop_only 
+  display: block
+
+.mobile_only 
+  display: none
+
+.break
+  margin-top: 18px
+  display: block
+  content: ""
+
