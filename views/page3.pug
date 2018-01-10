@@ -1,16 +1,16 @@
 extends main
 
 include mixins/pages/page2/_p2Header
-include mixins/pages/page2/_p2Text
-include mixins/pages/page2/_p2Highlights
+include mixins/pages/page3/_p3Text
+include mixins/pages/page3/_p3Highlights
 include mixins/pages/_pageTurnerShared
 
 block content
   body.page2
     +p2Header()
-    +p2Text()
-    +p2Highlights()
-    +pageTurnerShared('/', '2', '/page3')
+    +p3Text()
+    +p3Highlights()
+    +pageTurnerShared('/page2', '3', '/page4')
     block scripts
       script(src="https://code.jquery.com/jquery-3.2.1.min.js")
       script(src="/dist/jQueryColor.js")          

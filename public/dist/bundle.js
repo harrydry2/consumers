@@ -162,15 +162,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = typedWrapperFunction;
 // add Class of Disabled Click to all the names
-var skip = document.querySelector(".hcSkipActive");
+
+var typedStringsContainer = document.querySelector(".typedStringsContainer");
+var wraphighlightsPage1 = document.querySelector(".wraphighlightsPage1");
 var p1ptContainer = document.querySelector(".p1ptContainer");
-var tom = document.querySelector(".tom");
-var jim = document.querySelector(".jim");
-var austin = document.querySelector(".austin");
-var kirby = document.querySelector(".kirby");
-var mark = document.querySelector(".mark");
-var james = document.querySelector(".james");
-var names = [tom, jim, austin, kirby, mark, james, p1ptContainer];
+var disableClickSection = [typedStringsContainer, wraphighlightsPage1, p1ptContainer];
+
+var skip = document.querySelector(".hcSkipActive");
 
 // Style all lines with opacity 0
 var line1a = document.querySelectorAll(".p1line1")[0];
@@ -188,8 +186,8 @@ var line6b = document.querySelectorAll(".p1line6")[1];
 var lines = [line1a, line1b, line2a, line2b, line3a, line3b, line4a, line4b, line5a, line5b, line6a, line6b, p1ptContainer];
 
 function typedWrapperFunction() {
-  names.forEach(function (name) {
-    return name.classList.add("disableClick");
+  disableClickSection.forEach(function (section) {
+    return section.classList.add("disableClick");
   });
   lines.forEach(function (line) {
     return line.style.opacity = "0";
@@ -250,7 +248,9 @@ function typedWrapperFunction() {
 
   function sevenanimation() {
     skip.style.pointerEvents = "none";
-    $(".p1ptContainer").removeClass("disableClick");
+    disableClickSection.forEach(function (section) {
+      return section.classList.remove("disableClick");
+    });
     setTimeout(function () {
       $(".p1ptContainer").animate({ opacity: 1 }, 1000);
     }, 500);
@@ -272,21 +272,22 @@ exports.default = skipWrapperFunction;
 var _bling = __webpack_require__(0);
 
 var skip = (0, _bling.$)(".hcSkipActive");
-var wraphighlights = (0, _bling.$)(".wraphighlights");
+var wraphighlightsPage1 = (0, _bling.$)(".wraphighlightsPage1");
 var p1ptContainer = (0, _bling.$)(".p1ptContainer");
 var typedStringsContainer = (0, _bling.$)(".typedStringsContainer");
 var typedStringsContainerSkip = (0, _bling.$)(".typedStringsContainerSkip");
 
 function skipHighlights() {
-  // stop/start click on skip/>
+  // stop/start click on skip/body>
   skip.style.pointerEvents = "none";
   p1ptContainer.classList.remove("disableClick");
+  wraphighlightsPage1.classList.remove("disableClick");
   // remove typedStrings
   typedStringsContainer.style.display = "none";
   // add Stuff
   typedStringsContainerSkip.style.display = "block";
   typedStringsContainerSkip.classList.add("tscsActive");
-  wraphighlights.classList.add("whActive");
+  wraphighlightsPage1.classList.add("whActive");
   p1ptContainer.classList.add("ptActive");
 }
 

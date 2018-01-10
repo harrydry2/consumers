@@ -88,27 +88,26 @@ html {
 
 .headerContainer {
   justify-content: center;
-  padding: 24px 0px 10px 0px;
+  padding: 28.8px 0px 12px 0px;
   display: flex;
-  letter-spacing: 4.5px; }
+  letter-spacing: 4.5px;
+  font-size: 19px; }
 
-.green {
-  background-color: rgba(199, 220, 101, 0.7); }
+.wraphighlights2 {
+  max-width: 400px;
+  margin: 0 auto; }
 
-.yellow {
-  background-color: rgba(236, 208, 120, 0.7); }
+.wraphighlights3 {
+  max-width: 480px;
+  margin: 0 auto; }
 
-.violet {
-  background-color: rgba(80, 197, 186, 0.7); }
+ul {
+  display: flex;
+  list-style-type: none;
+  margin: 18px 0px 18px 0px; }
 
-.pink {
-  background-color: rgba(237, 50, 147, 0.6); }
-
-.orange {
-  background-color: rgba(239, 153, 87, 0.8); }
-
-.purple {
-  background-color: rgba(100, 130, 255, 0.7); }
+li {
+  flex: 1; }
 
 .ptContainer {
   display: flex;
@@ -124,29 +123,58 @@ html {
   transform: translateY(2px);
   cursor: pointer; }
 
+.green {
+  background-color: rgba(199, 220, 101, 0.7);
+  border-radius: 100px;
+  padding: 1px 2.5px;
+  display: inline; }
+
+.yellow {
+  background-color: rgba(236, 208, 120, 0.7);
+  border-radius: 100px;
+  padding: 1px 2.5px;
+  display: inline; }
+
+.violet {
+  background-color: rgba(80, 197, 186, 0.7);
+  border-radius: 100px;
+  padding: 1px 2.5px;
+  display: inline; }
+
+.pink {
+  background-color: rgba(237, 50, 147, 0.6);
+  border-radius: 100px;
+  padding: 1px 2.5px;
+  display: inline; }
+
+.orange {
+  background-color: rgba(239, 153, 87, 0.8);
+  border-radius: 100px;
+  padding: 1px 2.5px;
+  display: inline; }
+
+.purple {
+  background-color: rgba(100, 130, 255, 0.7);
+  border-radius: 100px;
+  padding: 1px 2.5px;
+  display: inline; }
+
 .hcCenterMargin {
   margin: 0 100px; }
 
 .hcSkip {
   cursor: pointer;
-  transform: translateY(-2px);
-  letter-spacing: normal; }
+  transform: translateY(-1px);
+  letter-spacing: normal;
+  font-size: 18px !important; }
 
 .hcSkipBlank {
   visibility: hidden; }
 
 /* HIGHLGIHTS SECTION */
-.wraphighlights {
-  max-width: 500px;
+.wraphighlightsPage1 {
+  max-width: 480px;
   margin: 0 auto; }
-
-div ul {
-  display: flex;
-  list-style-type: none;
-  margin: 18px 0px 18px 0px; }
-
-div li {
-  flex: 1; }
 
 /* A TAGS */
 a {
@@ -162,7 +190,7 @@ a {
     color: #333333;
     text-decoration: none !important; }
 
-.disableClick {
+.disableClick > * {
   pointer-events: none;
   position: relative; }
 

@@ -1,13 +1,15 @@
 // add Class of Disabled Click to all the names
-const skip = document.querySelector(".hcSkipActive");
+
+const typedStringsContainer = document.querySelector(".typedStringsContainer");
+const wraphighlightsPage1 = document.querySelector(".wraphighlightsPage1");
 const p1ptContainer = document.querySelector(".p1ptContainer");
-const tom = document.querySelector(".tom");
-const jim = document.querySelector(".jim");
-const austin = document.querySelector(".austin");
-const kirby = document.querySelector(".kirby");
-const mark = document.querySelector(".mark");
-const james = document.querySelector(".james");
-const names = [tom, jim, austin, kirby, mark, james, p1ptContainer];
+const disableClickSection = [
+  typedStringsContainer,
+  wraphighlightsPage1,
+  p1ptContainer
+];
+
+const skip = document.querySelector(".hcSkipActive");
 
 // Style all lines with opacity 0
 const line1a = document.querySelectorAll(".p1line1")[0];
@@ -39,7 +41,7 @@ const lines = [
 ];
 
 export default function typedWrapperFunction() {
-  names.forEach(name => name.classList.add("disableClick"));
+  disableClickSection.forEach(section => section.classList.add("disableClick"));
   lines.forEach(line => (line.style.opacity = `0`));
 
   // Run typed.js
@@ -121,7 +123,9 @@ export default function typedWrapperFunction() {
 
   function sevenanimation() {
     skip.style.pointerEvents = "none";
-    $(".p1ptContainer").removeClass("disableClick");
+    disableClickSection.forEach(section =>
+      section.classList.remove("disableClick")
+    );
     setTimeout(function() {
       $(".p1ptContainer").animate({ opacity: 1 }, 1000);
     }, 500);
