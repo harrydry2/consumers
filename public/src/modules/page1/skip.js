@@ -20,11 +20,4 @@ function skipHighlights() {
   p1ptContainer.classList.add("ptActive");
 }
 
-export default function skipWrapperFunction() {
-  skip.on("click", skipHighlights);
-}
-
-module.exports = {
-  skipWrapperFunction,
-  skipHighlights
-};
+skip.on("click", skipHighlights);

@@ -1,18 +1,239 @@
 extends main
 
+//- Page1
 include mixins/pages/page1/_p1Header
-include mixins/pages/page1/_p1TextSkip
 include mixins/pages/page1/_p1Highlights
 include mixins/pages/page1/_p1Text
+include mixins/pages/page1/_p1TextSkip
+include mixins/pages/page1/_p1TextAlt
+include mixins/pages/page1/_p1TextSkipAlt
 include mixins/pages/page1/_p1PageTurner
 
+//- Page2
+include mixins/pages/page2/_p2Text
+include mixins/pages/page2/_p2Highlights
+include mixins/pages/page2/_pageTurner2
+
+//- Page3
+include mixins/pages/page3/_p3Text
+include mixins/pages/page3/_p3Highlights
+include mixins/pages/page3/_pageTurner3
+
+//- Page4
+include mixins/pages/page4/_p4Text
+include mixins/pages/page4/_pageTurner4
+
+//- Page5
+include mixins/pages/page5/_p5Text
+include mixins/pages/page5/_pageTurner5
+include mixins/pages/page5/_p5Highlights
+
+//- Page6
+include mixins/pages/page6/_p6Text
+include mixins/pages/page6/_pageTurner6
+include mixins/pages/page6/_p6Highlights
+
+//- Page7
+include mixins/pages/page7/_p7Text
+include mixins/pages/page7/_pageTurner7
+include mixins/pages/page7/_p7Highlights
+
+//- Page8
+include mixins/pages/page8/_p8Text
+include mixins/pages/page8/_pageTurner8
+include mixins/pages/page8/_p8Highlights
+
+//- Page9
+include mixins/pages/page9/_p9Text
+include mixins/pages/page9/_pageTurner9
+include mixins/pages/page9/_p9Highlights
+
+//- Page10
+include mixins/pages/page10/_p10Text
+include mixins/pages/page10/_pageTurner10
+include mixins/pages/page10/_p10Highlights
+
+//- Page11
+include mixins/pages/page11/_p11Text
+include mixins/pages/page11/_pageTurner11
+
+//- Page12
+include mixins/pages/page12/_p12Text
+include mixins/pages/page12/_pageTurner12
+include mixins/pages/page12/_p12Highlights
+
+//- Page13
+include mixins/pages/page13/_p13Text
+include mixins/pages/page13/_pageTurner13
+include mixins/pages/page13/_p13Highlights
+
+//- Page14
+include mixins/pages/page14/_p14Text
+include mixins/pages/page14/_pageTurner14
+include mixins/pages/page14/_p14Highlights
+
+//- Page15
+include mixins/pages/page15/_p15Text
+include mixins/pages/page15/_pageTurner15
+include mixins/pages/page15/_p15Highlights
+
+//- Page16
+include mixins/pages/page16/_p16Text
+include mixins/pages/page16/_pageTurner16
+include mixins/pages/page16/_p16Highlights
+
+//- Page17
+include mixins/pages/page17/_p17Text
+include mixins/pages/page17/_pageTurner17
+include mixins/pages/page17/_p17Highlights
+
+//- Page18
+include mixins/pages/page18/_p18Text
+include mixins/pages/page18/_pageTurner18
+include mixins/pages/page18/_p18Highlights
+
+//- Page19
+include mixins/pages/page19/_p19Text
+include mixins/pages/page19/_pageTurner19
+include mixins/pages/page19/_p19Highlights
+
+//- Page20
+include mixins/pages/page20/_p20Text
+include mixins/pages/page20/_pageTurner20
+include mixins/pages/page20/_p20Highlights
+
+//- Page21
+include mixins/pages/page21/_p21Text
+include mixins/pages/page21/_pageTurner21
+include mixins/pages/page21/_p21Highlights
+
 block content
-  body.page1
-    +p1Header()
-    +p1Text()
-    +p1TextSkip()    
-    +p1Highlights()
-    +p1PageTurner()
+  body
+    main
+      section.section-1
+        +p1Header()
+        +p1TextAlt()
+        +p1TextAltSkip()
+        .fixedSection
+          +p1Highlights()
+          +p1PageTurner()
+      section.section-2
+        .headerContainer THE CONSUMERS' PHILOSOPHY
+        +p2Text()
+        .fixedSection
+          +p2Highlights()
+          +pageTurner2()
+      section.section-3
+        .paddingTop
+        +p3Text()
+        .fixedSection
+          +p3Highlights()
+          +pageTurner3()
+      section.section-4
+        .headerContainer FRANK'S STORY
+        +p4Text()
+        .fixedSection
+          +pageTurner4()
+      section.section-5
+        .paddingTop        
+        +p5Text()
+        .fixedSection
+          +p5Highlights()
+          +pageTurner5()
+      section.section-6
+        .headerContainer CONSUMER OF INFORMATION
+        +p6Text()
+        .fixedSection
+          +p6Highlights()
+          +pageTurner6()
+      section.section-7
+        .paddingTop
+        +p7Text()
+        .fixedSection
+          +p7Highlights()
+          +pageTurner7()
+      section.section-8
+        .headerContainer CONSUMER OF EXPERIENCES
+        +p8Text()
+        .fixedSection
+          +p8Highlights()
+          +pageTurner8()
+      section.section-9
+        .paddingTop        
+        +p9Text()
+        .fixedSection
+          //- +p9Highlights()
+          +pageTurner9()
+      section.section-10
+        .paddingTop        
+        +p10Text()
+        .fixedSection
+          +p10Highlights()
+          +pageTurner10()
+      section.section-11
+        .headerContainer THE ARTIST, THE ORATOR, THE AUTHOR
+        +p11Text()
+        .fixedSection
+          +pageTurner11()
+      section.section-12
+        .paddingTop      
+        +p12Text()
+        .fixedSection
+          +p12Highlights()
+          +pageTurner12()
+      section.section-13
+        .paddingTop
+        +p13Text()
+        .fixedSection
+          +p13Highlights()
+          +pageTurner13()
+      section.section-14
+        .paddingTop
+        +p14Text()
+        .fixedSection
+          +p14Highlights()
+          +pageTurner14()
+      section.section-15
+        .paddingTop
+        +p15Text()
+        .fixedSection
+          +p15Highlights()
+          +pageTurner15()
+      section.section-16
+        .headerContainer CONNECTING THE DOTS
+        +p16Text()
+        .fixedSection
+          +pageTurner16()
+      section.section-17
+        .headerContainer EPILOGUE
+        +p17Text()
+        .fixedSection
+          +p17Highlights()
+          +pageTurner17()
+      section.section-18
+        .headerContainer BONUS TRACK
+        +p18Text()
+        .fixedSection
+          +p18Highlights()
+          +pageTurner18()
+      section.section-19
+        .paddingTop
+        +p19Text()
+        .fixedSection
+          +p19Highlights()
+          +pageTurner19()
+      section.section-20
+        .paddingTop
+        +p20Text()
+        .fixedSection
+          +p20Highlights()
+          +pageTurner20()
+      section.section-21
+        .paddingTop
+        +p21Text()
+        .fixedSection
+          +p21Highlights()
+          +pageTurner21()
     block scripts
       script(src="https://code.jquery.com/jquery-3.2.1.min.js")
       script(src="/dist/typed.js")

@@ -40,94 +40,92 @@ const lines = [
   p1ptContainer
 ];
 
-export default function typedWrapperFunction() {
-  disableClickSection.forEach(section => section.classList.add("disableClick"));
-  lines.forEach(line => (line.style.opacity = `0`));
+disableClickSection.forEach(section => section.classList.add("disableClick"));
+lines.forEach(line => (line.style.opacity = `0`));
 
-  // Run typed.js
-  $(document).ready(function() {
-    $("#typed").typed({
-      stringsElement: $("#typed-strings"),
-      startDelay: 2000,
-      typeSpeed: 1.7,
-      callback: oneanimation
-    });
+// Run typed.js
+$(document).ready(function() {
+  $("#typed").typed({
+    stringsElement: $("#typed-strings"),
+    startDelay: 2000,
+    typeSpeed: 1.7,
+    callback: oneanimation
   });
+});
 
-  // Series of Animations
-  function oneanimation() {
-    setTimeout(function() {
-      $(".tom, .p1line1").animate(
-        { backgroundColor: "rgba(199, 220, 101, .7)", opacity: 1 },
-        1000,
-        twoanimation
-      );
-      $(".tom, .p1line1").removeClass("disableClick");
-    }, 1000);
-  }
-
-  function twoanimation() {
-    setTimeout(function() {
-      $(".jim, .p1line2").animate(
-        { backgroundColor: "rgba(236, 208, 120, .7)", opacity: 1 },
-        1000,
-        threeanimation
-      );
-      $(".jim, .p1line2").removeClass("disableClick");
-    }, 1000);
-  }
-
-  function threeanimation() {
-    setTimeout(function() {
-      $(".austin, .p1line3").animate(
-        { backgroundColor: "rgba(80, 197, 186, 0.7)", opacity: 1 },
-        1000,
-        fouranimation
-      );
-      $(".austin, .p1line3").removeClass("disableClick");
-    }, 1000);
-  }
-
-  function fouranimation() {
-    setTimeout(function() {
-      $(".kirby, .p1line4").animate(
-        { backgroundColor: "rgba(237, 50, 147, 0.6)", opacity: 1 },
-        1000,
-        fiveanimation
-      );
-      $(" .kirby, .p1line4").removeClass("disableClick");
-    }, 1000);
-  }
-
-  function fiveanimation() {
-    setTimeout(function() {
-      $(".mark, .p1line5").animate(
-        { backgroundColor: "rgba(239, 153, 87, 0.8)", opacity: 1 },
-        1000,
-        sixanimation
-      );
-      $(".mark, .p1line5").removeClass("disableClick");
-    }, 1000);
-  }
-
-  function sixanimation() {
-    setTimeout(function() {
-      $(".james, .p1line6").animate(
-        { backgroundColor: "rgba(100,130,400,0.7)", opacity: 1 },
-        1000,
-        sevenanimation
-      );
-      $(".james, .p1line6").removeClass("disableClick");
-    }, 1000);
-  }
-
-  function sevenanimation() {
-    skip.style.pointerEvents = "none";
-    disableClickSection.forEach(section =>
-      section.classList.remove("disableClick")
+// Series of Animations
+function oneanimation() {
+  setTimeout(function() {
+    $(".tom, .p1line1").animate(
+      { backgroundColor: "rgba(150, 240, 75, 0.65)", opacity: 1 },
+      1000,
+      twoanimation
     );
-    setTimeout(function() {
-      $(".p1ptContainer").animate({ opacity: 1 }, 1000);
-    }, 500);
-  }
+    $(".tom, .p1line1").removeClass("disableClick");
+  }, 1000);
+}
+
+function twoanimation() {
+  setTimeout(function() {
+    $(".jim, .p1line2").animate(
+      { backgroundColor: "rgba(266, 238, 110, 0.78)", opacity: 1 },
+      1000,
+      threeanimation
+    );
+    $(".jim, .p1line2").removeClass("disableClick");
+  }, 1000);
+}
+
+function threeanimation() {
+  setTimeout(function() {
+    $(".austin, .p1line3").animate(
+      { backgroundColor: "rgba(80, 205, 236, 0.62)", opacity: 1 },
+      1000,
+      fouranimation
+    );
+    $(".austin, .p1line3").removeClass("disableClick");
+  }, 1000);
+}
+
+function fouranimation() {
+  setTimeout(function() {
+    $(".mark, .p1line4").animate(
+      { backgroundColor: "rgba(277, 80, 210, 0.44)", opacity: 1 },
+      1000,
+      fiveanimation
+    );
+    $(" .mark, .p1line4").removeClass("disableClick");
+  }, 1000);
+}
+
+function fiveanimation() {
+  setTimeout(function() {
+    $(".james, .p1line5").animate(
+      { backgroundColor: "rgba(299, 140, 0, 0.50)", opacity: 1 },
+      1000,
+      sixanimation
+    );
+    $(".james, .p1line5").removeClass("disableClick");
+  }, 1000);
+}
+
+function sixanimation() {
+  setTimeout(function() {
+    $(".james2, .p1line6").animate(
+      { backgroundColor: "rgba(87, 130, 365, 0.53)", opacity: 1 },
+      1000,
+      sevenanimation
+    );
+    $(".james2, .p1line6").removeClass("disableClick");
+  }, 1000);
+}
+
+function sevenanimation() {
+  skip.style.pointerEvents = "none";
+  disableClickSection.forEach(section =>
+    section.classList.remove("disableClick")
+  );
+  setTimeout(function() {
+    $(".p1ptContainer").animate({ opacity: 1 }, 1000);
+  }, 500);
 }
