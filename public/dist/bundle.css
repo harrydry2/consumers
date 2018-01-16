@@ -136,6 +136,9 @@ body, html {
   @media screen and (min-height: 880px) {
     body, html {
       font-size: 12px; } }
+  @media screen and (min-height: 930px) {
+    body, html {
+      font-size: 12.5px; } }
 
 .headerContainer {
   justify-content: center;
