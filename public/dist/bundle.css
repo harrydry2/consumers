@@ -309,6 +309,9 @@ body {
 .paddingTop {
   height: 2.15rem;
   width: 100%; }
+  @media screen and (min-height: 800px) {
+    .paddingTop {
+      height: 2.6rem; } }
 
 .wh2 {
   max-width: 40rem; }
