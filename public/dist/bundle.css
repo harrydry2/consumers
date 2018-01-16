@@ -128,6 +128,30 @@ body, html {
     body, html {
       font-size: 11px; } }
 
+.headerContainer {
+  justify-content: center;
+  padding: 2.3rem 0px 1.2rem 0px;
+  display: flex;
+  letter-spacing: 4.5px;
+  font-size: 1.9rem; }
+
+.hcCenterMargin {
+  margin: 0 10rem; }
+
+.hcSkip {
+  cursor: pointer;
+  transform: translateY(-1px);
+  letter-spacing: normal;
+  font-size: 1.8rem !important; }
+
+.hcSkipBlank {
+  visibility: hidden; }
+
+.nightMode {
+  width: 1.2rem;
+  height: 1.2rem;
+  transform: translateY(2px); }
+
 .break {
   margin-top: 1.8rem;
   display: block;
@@ -276,13 +300,6 @@ body {
   --color: white;
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.3); }
 
-.headerContainer {
-  justify-content: center;
-  padding: 2.3rem 0px 1.2rem 0px;
-  display: flex;
-  letter-spacing: 4.5px;
-  font-size: 1.9rem; }
-
 .paddingTop {
   height: 2.15rem;
   width: 100%; }
@@ -376,29 +393,11 @@ li {
   height: 17px; }
 
 .moonBlack {
-  width: 12px;
-  height: 12px;
   fill: var(--color); }
-
-.hcCenterMargin {
-  margin: 0 10rem; }
-
-.hcSkip {
-  cursor: pointer;
-  transform: translateY(-1px);
-  letter-spacing: normal;
-  font-size: 18px !important; }
-
-.hcSkipBlank {
-  visibility: hidden; }
-
-.nightMode {
-  margin-left: 7px;
-  transform: translateY(2px); }
 
 /* HIGHLGIHTS SECTION */
 .wraphighlightsPage1 {
-  max-width: 480px;
+  max-width: 48rem;
   margin: 0 auto; }
 
 /* A TAGS */
