@@ -68,7 +68,7 @@ html, body {
 .poemItalic {
   text-align: left;
   margin: 0 auto;
-  width: 290px;
+  width: 29rem;
   font-family: PerpetuaStdRItalic; }
 
 .desktop_only {
@@ -124,6 +124,9 @@ body, html {
     body, html {
       font-size: 10.5px;
       line-height: 1.5; } }
+  @media screen and (min-height: 780px) {
+    body, html {
+      font-size: 11px; } }
 
 .break {
   margin-top: 1.8rem;
