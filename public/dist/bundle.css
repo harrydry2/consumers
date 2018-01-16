@@ -130,6 +130,9 @@ body, html {
   @media screen and (min-height: 830px) {
     body, html {
       font-size: 11.4px; } }
+  @media screen and (min-height: 855px) {
+    body, html {
+      font-size: 11.7px; } }
   @media screen and (min-height: 880px) {
     body, html {
       font-size: 12px; } }
@@ -213,9 +216,6 @@ body, html {
   @media screen and (max-height: 625px) {
     .poemBreak {
       margin-top: .96rem; } }
-  @media screen and (min-height: 830px) {
-    .poemBreak {
-      margin-top: 1.32rem; } }
 
 .fixedSection {
   position: fixed;
