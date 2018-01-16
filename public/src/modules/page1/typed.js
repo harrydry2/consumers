@@ -48,10 +48,8 @@ disableClickSection.forEach(section => section.classList.add("disableClick"));
 $(document).ready(function() {
   $("#typed").typed({
     stringsElement: $("#typed-strings"),
-    startDelay: 1000,
-    // startDelay: 2000,
-    typeSpeed: 0.1,
-    // typeSpeed: 1.7,
+    startDelay: 2000,
+    typeSpeed: 1.7,
     callback: oneanimation
   });
 });
