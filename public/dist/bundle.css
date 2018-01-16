@@ -127,6 +127,9 @@ body, html {
   @media screen and (min-height: 780px) {
     body, html {
       font-size: 11px; } }
+  @media screen and (min-height: 830px) {
+    body, html {
+      font-size: 12px; } }
 
 .headerContainer {
   justify-content: center;
