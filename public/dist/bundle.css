@@ -146,6 +146,41 @@ body, html {
   @media screen and (min-height: 800px) {
     .headerContainer {
       padding: 2.8rem 0px 1.5rem 0px; } }
+  @media screen and (min-height: 930px) {
+    .headerContainer {
+      padding: 3.36rem 0px 1.8rem 0px; } }
+
+.paddingTop {
+  height: 2.15rem;
+  width: 100%; }
+  @media screen and (min-height: 800px) {
+    .paddingTop {
+      height: 2.6rem; } }
+  @media screen and (min-height: 930px) {
+    .paddingTop {
+      height: 3.12rem; } }
+
+.fixedSection {
+  position: fixed;
+  bottom: 2rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto; }
+  @media screen and (max-height: 700px) {
+    .fixedSection {
+      bottom: 1.7rem; } }
+  @media screen and (max-height: 670px) {
+    .fixedSection {
+      bottom: 1.4rem; } }
+  @media screen and (max-height: 650px) {
+    .fixedSection {
+      bottom: 1.2rem; } }
+  @media screen and (min-height: 800px) {
+    .fixedSection {
+      bottom: 2.5rem; } }
+  @media screen and (min-height: 930px) {
+    .fixedSection {
+      bottom: 3rem; } }
 
 .hcCenterMargin {
   margin: 0 10rem; }
@@ -216,25 +251,6 @@ body, html {
   @media screen and (max-height: 625px) {
     .poemBreak {
       margin-top: .96rem; } }
-
-.fixedSection {
-  position: fixed;
-  bottom: 2rem;
-  left: 0;
-  right: 0;
-  margin: 0 auto; }
-  @media screen and (max-height: 700px) {
-    .fixedSection {
-      bottom: 1.7rem; } }
-  @media screen and (max-height: 670px) {
-    .fixedSection {
-      bottom: 1.4rem; } }
-  @media screen and (max-height: 650px) {
-    .fixedSection {
-      bottom: 1.2rem; } }
-  @media screen and (min-height: 800px) {
-    .fixedSection {
-      bottom: 2.5rem; } }
 
 .wraphighlights {
   margin: 0 auto 3rem auto; }
@@ -323,13 +339,6 @@ body {
   --background1: #231729;
   --color: white;
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.3); }
-
-.paddingTop {
-  height: 2.15rem;
-  width: 100%; }
-  @media screen and (min-height: 800px) {
-    .paddingTop {
-      height: 2.6rem; } }
 
 .wh2 {
   max-width: 40rem; }
