@@ -1,4 +1,7 @@
+import skipHighlights from "./skip";
+
 // add Class of Disabled Click to all the names
+const tom = document.querySelector(".tom");
 
 const typedStringsContainer = document.querySelector(".typedStringsContainer");
 const wraphighlightsPage1 = document.querySelector(".wraphighlightsPage1");
@@ -36,19 +39,19 @@ const lines = [
   line5a,
   line5b,
   line6a,
-  line6b,
-  p1ptContainer
+  line6b
 ];
 
 disableClickSection.forEach(section => section.classList.add("disableClick"));
-lines.forEach(line => (line.style.opacity = `0`));
-
+// lines.forEach(line => (line.style.opacity = `0`));
 // Run typed.js
 $(document).ready(function() {
   $("#typed").typed({
     stringsElement: $("#typed-strings"),
-    startDelay: 2000,
-    typeSpeed: 1.7,
+    startDelay: 1000,
+    // startDelay: 2000,
+    typeSpeed: 0.1,
+    // typeSpeed: 1.7,
     callback: oneanimation
   });
 });
@@ -125,7 +128,70 @@ function sevenanimation() {
   disableClickSection.forEach(section =>
     section.classList.remove("disableClick")
   );
+  eightAnimation();
   setTimeout(function() {
     $(".p1ptContainer").animate({ opacity: 1 }, 1000);
   }, 500);
+}
+
+function eightAnimation() {
+  $("span .tom").on("mouseover", function() {
+    document.querySelector("span .tom").classList.add("hoverOpacityG");
+  });
+
+  $("span .tom").on("mouseleave", function() {
+    document.querySelector("span .tom").classList.remove("hoverOpacityG");
+  });
+
+  $("span .jim").on("mouseover", function() {
+    document.querySelectorAll("span .jim").forEach(color => {
+      color.classList.add("hoverOpacityY");
+    });
+  });
+
+  $("span .jim").on("mouseleave", function() {
+    document.querySelectorAll("span .jim").forEach(color => {
+      color.classList.remove("hoverOpacityY");
+    });
+  });
+
+  $("span .austin").on("mouseover", function() {
+    document.querySelector("span .austin").classList.add("hoverOpacityB");
+  });
+
+  $("span .austin").on("mouseleave", function() {
+    document.querySelector("span .austin").classList.remove("hoverOpacityB");
+  });
+
+  $("span .mark").on("mouseover", function() {
+    document.querySelectorAll("span .mark").forEach(color => {
+      color.classList.add("hoverOpacityP");
+    });
+  });
+
+  $("span .mark").on("mouseleave", function() {
+    document.querySelectorAll("span .mark").forEach(color => {
+      color.classList.remove("hoverOpacityP");
+    });
+  });
+
+  $("span .james").on("mouseover", function() {
+    document.querySelectorAll("span .james").forEach(color => {
+      color.classList.add("hoverOpacityO");
+    });
+  });
+
+  $("span .james").on("mouseleave", function() {
+    document.querySelectorAll("span .james").forEach(color => {
+      color.classList.remove("hoverOpacityO");
+    });
+  });
+
+  $("span .james2").on("mouseover", function() {
+    document.querySelector("span .james2").classList.add("hoverOpacityM");
+  });
+
+  $("span .james2").on("mouseleave", function() {
+    document.querySelector("span .james2").classList.remove("hoverOpacityM");
+  });
 }

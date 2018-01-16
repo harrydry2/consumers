@@ -1,6 +1,6 @@
 // p1Header
 .hcCenterMargin
-  margin: 0 100px
+  margin: 0 10rem
 .hcSkip
   cursor: pointer
   transform: translateY(-1px)
@@ -16,18 +16,25 @@
   margin: 0 auto
 
 /* A TAGS
-a
-  color: $black
-  text-decoration: none !important
-  &:visited
-    color: $black
-    text-decoration: none !important
-  &:hover
-    color: rgba(0, 0, 0, 0.75)
-    text-decoration: none !important
-  &:focus
-    color: $black
-    text-decoration: none !important
+// a
+//   color: $black
+//   text-decoration: none !important
+//   &:visited
+//     color: $black
+//     text-decoration: none !important
+//   &:hover
+//     // color: rgba(0, 0, 0, 0.75)
+//     text-decoration: none !important
+//     opacity: 0.83
+//   &:focus
+//     color: $black
+//     text-decoration: none !important
+
+// a
+//   &:hover
+//     opacity: 0.8
+//     text-decoration: none !important    
+
 
 .disableClick
   > *
@@ -43,64 +50,92 @@ a
 // border-radius
 .tom
   +br
+  // transition: all .4s
 .jim
   +br
 .austin
   +br
+  // transition: all .4s
 .mark
   +br
+  // transition: all .4s
 .james
   +br
+  // transition: all .4s
 .james2
   +br
+  // transition: all .4s
 
 .p1line1
   +br
+  opacity: 0
+  background-color: rgba(150, 240, 75, 0.65)  
 .p1line2
   +br
+  // transition: all .4s
+  opacity: 0
+  background-color: rgba(266, 238, 110, 0.78)  
 .p1line3
   +br
+  // transition: all .4s
+  opacity: 0
+  background-color: rgba(80, 205, 236, 0.62)  
 .p1line4
   +br
+  // transition: all .4s
+  opacity: 0
+  background-color: rgba(277, 80, 210, 0.44)  
 .p1line5
   +br
+  // transition: all .4s
+  opacity: 0
+  background-color: rgba(299, 140, 0, 0.50)
+
 .p1line6
   +br
+  opacity: 0 
+  background-color: rgba(87, 130, 365, 0.53)
 
 // skipAnimation
 .tscsActive
   .tom
     background-color: rgba(150, 240, 75, 0.65)
+    transition: background-color .4s    
   .jim
     background-color: rgba(266, 238, 110, 0.78)
+    transition: background-color .4s    
   .austin
     background-color: rgba(80, 205, 236, 0.62)
+    transition: background-color .4s    
   .mark
     background-color: rgba(277, 80, 210, 0.44)
+    transition: background-color .4s    
   .james
     background-color: rgba(299, 140, 0, 0.50)
+    transition: background-color .4s    
   .james2
     background-color: rgba(87, 130, 365, 0.53)
+    transition: background-color .4s    
 
 .whActive
   .p1line1
-    background-color: rgba(150, 240, 75, 0.65)
-    opacity: 1 !important
+    opacity: 1 
+    transition: background-color .4s
   .p1line2
-    background-color: rgba(266, 238, 110, 0.78)
-    opacity: 1 !important
+    opacity: 1
+    transition: background-color .4s    
   .p1line3
-    background-color: rgba(80, 205, 236, 0.62)
-    opacity: 1 !important
+    opacity: 1
+    transition: background-color .4s    
   .p1line4
-    background-color: rgba(277, 80, 210, 0.44)
-    opacity: 1 !important
+    opacity: 1
+    transition: background-color .4s    
   .p1line5
-    background-color: rgba(299, 140, 0, 0.50)
-    opacity: 1 !important
+    opacity: 1
+    transition: background-color .4s
   .p1line6
-    background-color: rgba(87, 130, 365, 0.53)
-    opacity: 1 !important
+    opacity: 1
+    transition: background-color .4s    
 
 .ptActive
   opacity: 1 !important
@@ -111,12 +146,7 @@ a
   justify-content: center
   align-items: center
   color: $black
+  opacity: 0
 
 .p1ptLeftButton
   visibility: hidden
-
-
-
-
-
-

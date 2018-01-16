@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -95,40 +95,89 @@ exports.$$ = $$;
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(2);
+"use strict";
 
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = skipHighlights;
+
+var _bling = __webpack_require__(0);
+
+var skip = (0, _bling.$)(".hcSkipActive");
+var wraphighlightsPage1 = (0, _bling.$)(".wraphighlightsPage1");
+var p1ptContainer = (0, _bling.$)(".p1ptContainer");
+var typedStringsContainer = (0, _bling.$)(".typedStringsContainer");
+var typedStringsContainerSkip = (0, _bling.$)(".typedStringsContainerSkip");
+
+function skipHighlights() {
+  // stop/start click on skip/body>
+  skip.style.pointerEvents = "none";
+  p1ptContainer.classList.remove("disableClick");
+  wraphighlightsPage1.classList.remove("disableClick");
+  // remove typedStrings
+  typedStringsContainer.style.display = "none";
+  // add Stuff
+  typedStringsContainerSkip.style.display = "block";
+  typedStringsContainerSkip.classList.add("tscsActive");
+  wraphighlightsPage1.classList.add("whActive");
+  p1ptContainer.classList.add("ptActive");
+}
+
+skip.on("click", skipHighlights);
 
 /***/ }),
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+module.exports = __webpack_require__(3);
 
-
-__webpack_require__(3);
-
-var _bling = __webpack_require__(0);
-
-__webpack_require__(4);
-
-__webpack_require__(5);
-
-__webpack_require__(6);
 
 /***/ }),
 /* 3 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
+__webpack_require__(4);
+
+var _bling = __webpack_require__(0);
+
+__webpack_require__(5);
+
+var _skip = __webpack_require__(1);
+
+var _skip2 = _interopRequireDefault(_skip);
+
+__webpack_require__(6);
+
+__webpack_require__(7);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _skip = __webpack_require__(1);
+
+var _skip2 = _interopRequireDefault(_skip);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 // add Class of Disabled Click to all the names
+var tom = document.querySelector(".tom");
 
 var typedStringsContainer = document.querySelector(".typedStringsContainer");
 var wraphighlightsPage1 = document.querySelector(".wraphighlightsPage1");
@@ -150,21 +199,20 @@ var line5a = document.querySelectorAll(".p1line5")[0];
 var line5b = document.querySelectorAll(".p1line5")[1];
 var line6a = document.querySelectorAll(".p1line6")[0];
 var line6b = document.querySelectorAll(".p1line6")[1];
-var lines = [line1a, line1b, line2a, line2b, line3a, line3b, line4a, line4b, line5a, line5b, line6a, line6b, p1ptContainer];
+var lines = [line1a, line1b, line2a, line2b, line3a, line3b, line4a, line4b, line5a, line5b, line6a, line6b];
 
 disableClickSection.forEach(function (section) {
   return section.classList.add("disableClick");
 });
-lines.forEach(function (line) {
-  return line.style.opacity = "0";
-});
-
+// lines.forEach(line => (line.style.opacity = `0`));
 // Run typed.js
 $(document).ready(function () {
   $("#typed").typed({
     stringsElement: $("#typed-strings"),
-    startDelay: 2000,
-    typeSpeed: 1.7,
+    startDelay: 1000,
+    // startDelay: 2000,
+    typeSpeed: 0.1,
+    // typeSpeed: 1.7,
     callback: oneanimation
   });
 });
@@ -217,41 +265,73 @@ function sevenanimation() {
   disableClickSection.forEach(function (section) {
     return section.classList.remove("disableClick");
   });
+  eightAnimation();
   setTimeout(function () {
     $(".p1ptContainer").animate({ opacity: 1 }, 1000);
   }, 500);
 }
 
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
+function eightAnimation() {
+  $("span .tom").on("mouseover", function () {
+    document.querySelector("span .tom").classList.add("hoverOpacityG");
+  });
 
-"use strict";
+  $("span .tom").on("mouseleave", function () {
+    document.querySelector("span .tom").classList.remove("hoverOpacityG");
+  });
 
+  $("span .jim").on("mouseover", function () {
+    document.querySelectorAll("span .jim").forEach(function (color) {
+      color.classList.add("hoverOpacityY");
+    });
+  });
 
-var _bling = __webpack_require__(0);
+  $("span .jim").on("mouseleave", function () {
+    document.querySelectorAll("span .jim").forEach(function (color) {
+      color.classList.remove("hoverOpacityY");
+    });
+  });
 
-var skip = (0, _bling.$)(".hcSkipActive");
-var wraphighlightsPage1 = (0, _bling.$)(".wraphighlightsPage1");
-var p1ptContainer = (0, _bling.$)(".p1ptContainer");
-var typedStringsContainer = (0, _bling.$)(".typedStringsContainer");
-var typedStringsContainerSkip = (0, _bling.$)(".typedStringsContainerSkip");
+  $("span .austin").on("mouseover", function () {
+    document.querySelector("span .austin").classList.add("hoverOpacityB");
+  });
 
-function skipHighlights() {
-  // stop/start click on skip/body>
-  skip.style.pointerEvents = "none";
-  p1ptContainer.classList.remove("disableClick");
-  wraphighlightsPage1.classList.remove("disableClick");
-  // remove typedStrings
-  typedStringsContainer.style.display = "none";
-  // add Stuff
-  typedStringsContainerSkip.style.display = "block";
-  typedStringsContainerSkip.classList.add("tscsActive");
-  wraphighlightsPage1.classList.add("whActive");
-  p1ptContainer.classList.add("ptActive");
+  $("span .austin").on("mouseleave", function () {
+    document.querySelector("span .austin").classList.remove("hoverOpacityB");
+  });
+
+  $("span .mark").on("mouseover", function () {
+    document.querySelectorAll("span .mark").forEach(function (color) {
+      color.classList.add("hoverOpacityP");
+    });
+  });
+
+  $("span .mark").on("mouseleave", function () {
+    document.querySelectorAll("span .mark").forEach(function (color) {
+      color.classList.remove("hoverOpacityP");
+    });
+  });
+
+  $("span .james").on("mouseover", function () {
+    document.querySelectorAll("span .james").forEach(function (color) {
+      color.classList.add("hoverOpacityO");
+    });
+  });
+
+  $("span .james").on("mouseleave", function () {
+    document.querySelectorAll("span .james").forEach(function (color) {
+      color.classList.remove("hoverOpacityO");
+    });
+  });
+
+  $("span .james2").on("mouseover", function () {
+    document.querySelector("span .james2").classList.add("hoverOpacityM");
+  });
+
+  $("span .james2").on("mouseleave", function () {
+    document.querySelector("span .james2").classList.remove("hoverOpacityM");
+  });
 }
-
-skip.on("click", skipHighlights);
 
 /***/ }),
 /* 6 */
@@ -556,6 +636,271 @@ var section22 = (0, _bling.$)(".section-22");
 //   section21.classList.add("animate-in");
 //   section22.classList.remove("animate-in");
 // });
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _bling = __webpack_require__(0);
+
+var green = (0, _bling.$$)("a.green");
+var yellow = (0, _bling.$$)("a.yellow");
+var blue = (0, _bling.$$)("a.blue");
+var pink = (0, _bling.$$)("a.pink");
+var orange = (0, _bling.$$)("a.orange");
+
+var green1 = (0, _bling.$$)("div.green");
+var yellow1 = (0, _bling.$$)("div.yellow");
+var blue1 = (0, _bling.$$)("div.blue");
+var pink1 = (0, _bling.$$)("div.pink");
+var orange1 = (0, _bling.$$)("div.orange");
+
+var tom = (0, _bling.$$)(".tom");
+var jim = (0, _bling.$$)(".jim");
+var austin = (0, _bling.$$)(".austin");
+var mark = (0, _bling.$$)(".mark");
+var james = (0, _bling.$$)(".james");
+var james2 = (0, _bling.$$)(".james2");
+
+var line1 = (0, _bling.$$)(".p1line1");
+var line2 = (0, _bling.$$)(".p1line2");
+var line3 = (0, _bling.$$)(".p1line3");
+var line4 = (0, _bling.$$)(".p1line4");
+var line5 = (0, _bling.$$)(".p1line5");
+var line6 = (0, _bling.$$)(".p1line6");
+
+green.on("mouseover", hoverOnGreen);
+green.on("mouseleave", hoverOffGreen);
+yellow.on("mouseover", hoverOnYellow);
+yellow.on("mouseleave", hoverOffYellow);
+blue.on("mouseover", hoverOnBlue);
+blue.on("mouseleave", hoverOffBlue);
+pink.on("mouseover", hoverOnPink);
+pink.on("mouseleave", hoverOffPink);
+orange.on("mouseover", hoverOnOrange);
+orange.on("mouseleave", hoverOffOrange);
+
+green1.on("mouseover", hoverOnGreen1);
+green1.on("mouseleave", hoverOffGreen1);
+yellow1.on("mouseover", hoverOnYellow1);
+yellow1.on("mouseleave", hoverOffYellow1);
+blue1.on("mouseover", hoverOnBlue1);
+blue1.on("mouseleave", hoverOffBlue1);
+pink1.on("mouseover", hoverOnPink1);
+pink1.on("mouseleave", hoverOffPink1);
+orange1.on("mouseover", hoverOnOrange1);
+orange1.on("mouseleave", hoverOffOrange1);
+
+tom.on("mouseover", hoverOnTom);
+tom.on("mouseleave", hoverOffTom);
+jim.on("mouseover", hoverOnJim);
+jim.on("mouseleave", hoverOffJim);
+austin.on("mouseover", hoverOnAustin);
+austin.on("mouseleave", hoverOffAustin);
+mark.on("mouseover", hoverOnMark);
+mark.on("mouseleave", hoverOffMark);
+james.on("mouseover", hoverOnJames);
+james.on("mouseleave", hoverOffJames);
+james2.on("mouseover", hoverOnJames2);
+james2.on("mouseleave", hoverOffJames2);
+
+function hoverOnGreen() {
+  green.forEach(function (color) {
+    color.classList.add("hoverOpacityG");
+  });
+}
+
+function hoverOffGreen() {
+  green.forEach(function (color) {
+    color.classList.remove("hoverOpacityG");
+  });
+}
+
+function hoverOnGreen1() {
+  green1.forEach(function (color) {
+    color.classList.add("hoverOpacityG");
+  });
+}
+
+function hoverOffGreen1() {
+  green1.forEach(function (color) {
+    color.classList.remove("hoverOpacityG");
+  });
+}
+
+function hoverOnYellow() {
+  yellow.forEach(function (color) {
+    color.classList.add("hoverOpacityY");
+  });
+}
+
+function hoverOffYellow() {
+  yellow.forEach(function (color) {
+    color.classList.remove("hoverOpacityY");
+  });
+}
+
+function hoverOnYellow1() {
+  yellow1.forEach(function (color) {
+    color.classList.add("hoverOpacityY");
+  });
+}
+
+function hoverOffYellow1() {
+  yellow1.forEach(function (color) {
+    color.classList.remove("hoverOpacityY");
+  });
+}
+
+function hoverOnBlue() {
+  blue.forEach(function (color) {
+    color.classList.add("hoverOpacityB");
+  });
+}
+
+function hoverOffBlue() {
+  blue.forEach(function (color) {
+    color.classList.remove("hoverOpacityB");
+  });
+}
+
+function hoverOnBlue1() {
+  blue1.forEach(function (color) {
+    color.classList.add("hoverOpacityB");
+  });
+}
+
+function hoverOffBlue1() {
+  blue1.forEach(function (color) {
+    color.classList.remove("hoverOpacityB");
+  });
+}
+
+function hoverOnPink() {
+  pink.forEach(function (color) {
+    color.classList.add("hoverOpacityP");
+  });
+}
+
+function hoverOffPink() {
+  pink.forEach(function (color) {
+    color.classList.remove("hoverOpacityP");
+  });
+}
+
+function hoverOnPink1() {
+  pink1.forEach(function (color) {
+    color.classList.add("hoverOpacityP");
+  });
+}
+
+function hoverOffPink1() {
+  pink1.forEach(function (color) {
+    color.classList.remove("hoverOpacityP");
+  });
+}
+
+function hoverOnOrange() {
+  orange.forEach(function (color) {
+    color.classList.add("hoverOpacityO");
+  });
+}
+
+function hoverOffOrange() {
+  orange.forEach(function (color) {
+    color.classList.remove("hoverOpacityO");
+  });
+}
+
+function hoverOnOrange1() {
+  orange1.forEach(function (color) {
+    color.classList.add("hoverOpacityO");
+  });
+}
+
+function hoverOffOrange1() {
+  orange1.forEach(function (color) {
+    color.classList.remove("hoverOpacityO");
+  });
+}
+
+// Page1b
+
+function hoverOnTom() {
+  tom.forEach(function (color) {
+    color.classList.add("hoverOpacityG");
+  });
+}
+function hoverOffTom() {
+  tom.forEach(function (color) {
+    color.classList.remove("hoverOpacityG");
+  });
+}
+
+function hoverOnJim() {
+  jim.forEach(function (color) {
+    color.classList.add("hoverOpacityY");
+  });
+}
+
+function hoverOffJim() {
+  jim.forEach(function (color) {
+    color.classList.remove("hoverOpacityY");
+  });
+}
+
+function hoverOnAustin() {
+  austin.forEach(function (color) {
+    color.classList.add("hoverOpacityB");
+  });
+}
+
+function hoverOffAustin() {
+  austin.forEach(function (color) {
+    color.classList.remove("hoverOpacityB");
+  });
+}
+
+function hoverOnMark() {
+  mark.forEach(function (color) {
+    color.classList.add("hoverOpacityP");
+  });
+}
+
+function hoverOffMark() {
+  mark.forEach(function (color) {
+    color.classList.remove("hoverOpacityP");
+  });
+}
+
+function hoverOnJames() {
+  james.forEach(function (color) {
+    color.classList.add("hoverOpacityO");
+  });
+}
+
+function hoverOffJames() {
+  james.forEach(function (color) {
+    color.classList.remove("hoverOpacityO");
+  });
+}
+
+function hoverOnJames2() {
+  james2.forEach(function (color) {
+    color.classList.add("hoverOpacityM");
+  });
+}
+
+function hoverOffJames2() {
+  james2.forEach(function (color) {
+    color.classList.remove("hoverOpacityM");
+  });
+}
+
+// Page 1 Highlights
 
 /***/ })
 /******/ ]);

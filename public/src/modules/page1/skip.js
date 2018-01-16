@@ -6,7 +6,7 @@ const p1ptContainer = $(".p1ptContainer");
 const typedStringsContainer = $(".typedStringsContainer");
 const typedStringsContainerSkip = $(".typedStringsContainerSkip");
 
-function skipHighlights() {
+export default function skipHighlights() {
   // stop/start click on skip/body>
   skip.style.pointerEvents = "none";
   p1ptContainer.classList.remove("disableClick");
