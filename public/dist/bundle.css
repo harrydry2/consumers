@@ -129,6 +129,9 @@ body, html {
       font-size: 11px; } }
   @media screen and (min-height: 830px) {
     body, html {
+      font-size: 11.4px; } }
+  @media screen and (min-height: 880px) {
+    body, html {
       font-size: 12px; } }
 
 .headerContainer {
@@ -168,6 +171,9 @@ body, html {
   @media screen and (max-height: 625px) {
     .break {
       margin-top: 1.45rem; } }
+  @media screen and (min-height: 830px) {
+    .break {
+      margin-top: 2rem; } }
 
 .aTop {
   margin-top: 1.2rem;
@@ -179,6 +185,9 @@ body, html {
   @media screen and (max-height: 625px) {
     .aTop {
       margin-top: .96rem; } }
+  @media screen and (min-height: 830px) {
+    .aTop {
+      margin-top: 1.32rem; } }
 
 .aBottom {
   margin-top: .2rem;
@@ -190,6 +199,9 @@ body, html {
   @media screen and (max-height: 625px) {
     .aBottom {
       margin-top: .15rem; } }
+  @media screen and (min-height: 830px) {
+    .aBottom {
+      margin-top: .23rem; } }
 
 .poemBreak {
   margin-top: 1.2rem;
@@ -201,6 +213,9 @@ body, html {
   @media screen and (max-height: 625px) {
     .poemBreak {
       margin-top: .96rem; } }
+  @media screen and (min-height: 830px) {
+    .poemBreak {
+      margin-top: 1.32rem; } }
 
 .fixedSection {
   position: fixed;
