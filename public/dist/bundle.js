@@ -155,6 +155,8 @@ __webpack_require__(6);
 
 __webpack_require__(7);
 
+__webpack_require__(8);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
@@ -901,6 +903,22 @@ function hoverOffJames2() {
 }
 
 // Page 1 Highlights
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _bling = __webpack_require__(0);
+
+var nightMode = (0, _bling.$)(".nightMode");
+console.log(nightMode);
+
+nightMode.on("click", function () {
+  document.body.classList.toggle("nightmode");
+});
 
 /***/ })
 /******/ ]);

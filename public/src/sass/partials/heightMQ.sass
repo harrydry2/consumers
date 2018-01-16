@@ -1,6 +1,10 @@
 p, li, #typed, .typed-cursor, .ptCenterMargin, .poemItalic
   font-size: 1.8rem
 
+p, li, #typed, .typed-cursor, .ptCenterMargin, .poemItalic, .headerContainer, .ptButton
+  color: var(--color)
+  text-shadow: var(--shadow)
+
 // Screen Height Changes
 
 // Sorted down to 590px Height
@@ -10,9 +14,9 @@ body, html
   line-height: 1.45
   font-family: PerpetuaStdR
   font-size: 10px
+  background-color: var(--background)
   @media screen and (max-height: 685px)
     font-size: 9.9px
-    background: #231729
   @media screen and (max-height: 645px)
     font-size: 9.7px
     line-height: 1.4

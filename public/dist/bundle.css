@@ -95,15 +95,19 @@ section {
 p, li, #typed, .typed-cursor, .ptCenterMargin, .poemItalic {
   font-size: 1.8rem; }
 
+p, li, #typed, .typed-cursor, .ptCenterMargin, .poemItalic, .headerContainer, .ptButton {
+  color: var(--color);
+  text-shadow: var(--shadow); }
+
 body, html {
   text-align: center;
   line-height: 1.45;
   font-family: PerpetuaStdR;
-  font-size: 10px; }
+  font-size: 10px;
+  background-color: var(--background); }
   @media screen and (max-height: 685px) {
     body, html {
-      font-size: 9.9px;
-      background: #231729; } }
+      font-size: 9.9px; } }
   @media screen and (max-height: 645px) {
     body, html {
       font-size: 9.7px;
@@ -253,6 +257,18 @@ body, html {
   background-color: rgba(150, 240, 75, 0.5) !important;
   transition: background-color .4s; }
 
+body {
+  --background: white;
+  --background1: white;
+  --color: #333;
+  --shadow: 0 1px 2px transparent; }
+
+.nightmode {
+  --background: #1B2836;
+  --background1: #231729;
+  --color: white;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3); }
+
 .headerContainer {
   justify-content: center;
   padding: 2.3rem 0px 1.2rem 0px;
@@ -348,6 +364,15 @@ li {
 .animate-in {
   transform: translateX(0); }
 
+.twitter {
+  width: 20px;
+  height: 17px; }
+
+.moonBlack {
+  width: 12px;
+  height: 12px;
+  fill: var(--color); }
+
 .hcCenterMargin {
   margin: 0 10rem; }
 
@@ -359,6 +384,10 @@ li {
 
 .hcSkipBlank {
   visibility: hidden; }
+
+.nightMode {
+  margin-left: 7px;
+  transform: translateY(2px); }
 
 /* HIGHLGIHTS SECTION */
 .wraphighlightsPage1 {
