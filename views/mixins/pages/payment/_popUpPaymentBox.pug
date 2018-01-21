@@ -1,0 +1,14 @@
+mixin popUpPaymentBox()
+  .bhOuterContainer
+    .bhInnerContainer
+      .bhiiContainer
+        form(action="/charge" method="POST" id="payment-form")
+          input(type="text" name="stripeName" class="formInput" placeholder="Full Name")
+          input(type="text" name="stripeEmail" class="formInput" placeholder="Email Address")
+          input(type="text" name="stripeEmail" class="formInput" placeholder="Address")
+          input(type="text" name="stripeEmail" class="formInput" placeholder="City")
+          input(type="text" name="stripeEmail" class="formInput" placeholder="Postcode")
+          #cardNumber
+          #cardExpiry
+          #cardCvc          
+          #card-errors(role="alert")

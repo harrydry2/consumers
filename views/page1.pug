@@ -107,16 +107,27 @@ include mixins/pages/page21/_p21Text
 include mixins/pages/page21/_pageTurner21
 include mixins/pages/page21/_p21Highlights
 
+//- Payment PopUp
+include mixins/pages/payment/_popUp
+include mixins/pages/payment/_popUpPaymentBox
+
 block content
   body
     main
       section.section-1
-        +p1Header()
-        +p1TextAlt()
-        +p1TextAltSkip()
+        //- +p1Header()
+        //- +p1TextAlt()
+        //- +p1TextAltSkip()
+        //- .fixedSection
+        //-   +p1Highlights()
+        //-   +p1PageTurner()
+        .paddingTop
+        +p21Text()
+        +popUp()
+        +popUpPaymentBox()        
         .fixedSection
-          +p1Highlights()
-          +p1PageTurner()
+          +p21Highlights()
+          +pageTurner21()
       section.section-2
         .headerContainer THE CONSUMERS' PHILOSOPHY
         +p2Text()
@@ -229,11 +240,12 @@ block content
           +p20Highlights()
           +pageTurner20()
       section.section-21
-        .paddingTop
-        +p21Text()
+        +p1Header()
+        +p1TextAlt()
+        +p1TextAltSkip()
         .fixedSection
-          +p21Highlights()
-          +pageTurner21()
+          +p1Highlights()
+          +p1PageTurner()
     block scripts
       script(src="https://code.jquery.com/jquery-3.2.1.min.js")
       script(src="/dist/typed.js")

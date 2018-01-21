@@ -157,6 +157,10 @@ __webpack_require__(7);
 
 __webpack_require__(8);
 
+__webpack_require__(9);
+
+__webpack_require__(10);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
@@ -624,19 +628,6 @@ var section22 = (0, _bling.$)(".section-22");
   section21.classList.remove("animate-in");
 });
 
-(0, _bling.$)(".s21-s22").on("click", function () {
-  section21.classList.remove("animate-in");
-  section21.classList.add("animate-out");
-  section22.classList.add("animate-in");
-});
-
-// Page22
-// $(".s22-s21").on("click", function() {
-//   section21.classList.remove("animate-out");
-//   section21.classList.add("animate-in");
-//   section22.classList.remove("animate-in");
-// });
-
 /***/ }),
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -911,12 +902,204 @@ function hoverOffJames2() {
 
 var _bling = __webpack_require__(0);
 
-var nightMode = (0, _bling.$)(".nightMode");
-console.log(nightMode);
+var nightMode = (0, _bling.$)(".nightModeOn");
 
 nightMode.on("click", function () {
   document.body.classList.toggle("nightmode");
 });
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _bling = __webpack_require__(0);
+
+var puOuter = (0, _bling.$)(".puOuterContainer");
+var puInner = (0, _bling.$)(".puInnerContainer");
+var plusButton = (0, _bling.$)(".plusButton");
+
+var bhOuter = (0, _bling.$)(".bhOuterContainer");
+var bhInner = (0, _bling.$)(".bhInnerContainer");
+var buyHardback = (0, _bling.$)(".buyHardback");
+
+var bhOpenVar = false;
+
+// plus Button Click
+plusButton.on("click", puOpen);
+window.on("click", closepuOnClick);
+document.on("keydown", closepuOnEsc);
+
+function puOpen() {
+  puOuter.style.display = "flex";
+  setTimeout(function () {
+    return puInner.style.opacity = "1";
+  }, 50);
+  document.body.classList.add("noScroll");
+}
+
+function closepuOnClick(e) {
+  if (e.target == puOuter && bhOpenVar === false) {
+    puInner.style.opacity = "0";
+    document.body.classList.remove("noScroll");
+    setTimeout(function () {
+      return puOuter.style.display = "none";
+    }, 100);
+  }
+}
+
+function closepuOnEsc(e) {
+  if (e.keyCode == 27 && bhOpenVar === false) {
+    puInner.style.opacity = "0";
+    document.body.classList.remove("modalNoScroll");
+    setTimeout(function () {
+      return puOuter.style.display = "none";
+    }, 100);
+  }
+}
+
+// buyHardback Click
+
+buyHardback.on("click", bhOpen);
+window.on("click", closebhOnClick);
+document.on("keydown", closebhOnEsc);
+
+function bhOpen() {
+  bhOuter.style.display = "flex";
+  bhOpenVar = true;
+  setTimeout(function () {
+    return bhInner.style.opacity = "1";
+  }, 50);
+}
+
+function closebhOnClick(e) {
+  if (e.target == bhOuter && bhOpenVar === true) {
+    bhInner.style.opacity = "0";
+    setTimeout(function () {
+      return bhOuter.style.display = "none";
+    }, 100);
+    bhOpenVar = false;
+  }
+}
+
+function closebhOnEsc(e) {
+  if (e.keyCode == 27 && bhOpenVar === true) {
+    bhInner.style.opacity = "0";
+    setTimeout(function () {
+      return bhOuter.style.display = "none";
+    }, 100);
+    bhOpenVar = false;
+  }
+}
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var stripe = Stripe("pk_live_SYAmCo2SAlL03XizufhUazZk");
+var elements = stripe.elements({
+  fonts: [{
+    family: "PerpetuaStdR",
+    src: "url(https://hd999.herokuapp.com/fonts/PerpetuaStdR.woff2) format(\"woff\")"
+  }]
+});
+
+var elementStyles = {
+  base: {
+    color: "#333333",
+    fontFamily: "PerpetuaStdR",
+    fontSmoothing: "antialiased",
+    fontSize: "15px",
+    ":focus": {
+      color: "#424770"
+    },
+    "::placeholder": {
+      color: "#333333"
+    },
+    ":focus::placeholder": {
+      color: "#CFD7DF"
+    }
+  },
+  invalid: {
+    color: "#fff",
+    ":focus": {
+      color: "#FA755A"
+    },
+    "::placeholder": {
+      color: "red"
+    }
+  }
+};
+
+var elementClasses = {
+  focus: "focus",
+  empty: "empty",
+  invalid: "invalid"
+};
+
+var cardNumber = elements.create("cardNumber", {
+  style: elementStyles,
+  classes: elementClasses
+});
+cardNumber.mount("#cardNumber");
+
+var cardExpiry = elements.create("cardExpiry", {
+  style: elementStyles,
+  classes: elementClasses
+});
+cardExpiry.mount("#cardExpiry");
+
+var cardCvc = elements.create("cardCvc", {
+  style: elementStyles,
+  classes: elementClasses
+});
+cardCvc.mount("#cardCvc");
+
+// Handle real-time validation errors from the card Element.
+cardNumber.addEventListener("change", function (event) {
+  var displayError = document.getElementById("card-errors");
+  if (event.error) {
+    displayError.textContent = event.error.message;
+  } else {
+    displayError.textContent = "";
+  }
+});
+
+// Handle form submission
+var form = document.getElementById("payment-form");
+console.log(form, "form");
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  stripe.createToken(card).then(function (result) {
+    if (result.error) {
+      // Inform the user if there was an error
+      var errorElement = document.getElementById("card-errors");
+      errorElement.textContent = result.error.message;
+    } else {
+      // Send the token to your server
+      stripeTokenHandler(result.token);
+    }
+  });
+});
+
+var stripeTokenHandler = function stripeTokenHandler(token) {
+  // Insert the token ID into the form so it gets submitted to the server
+  var form = document.getElementById("payment-form");
+  var hiddenInput = document.createElement("input");
+  hiddenInput.setAttribute("type", "hidden");
+  hiddenInput.setAttribute("name", "stripeToken");
+  hiddenInput.setAttribute("value", token.id);
+  form.appendChild(hiddenInput);
+
+  // Submit the form
+  form.submit();
+};
 
 /***/ })
 /******/ ]);

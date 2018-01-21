@@ -1,0 +1,39 @@
+.bhOuterContainer
+  display: none
+  position: fixed
+  z-index: 1
+  left: 0
+  top: 0
+  height: 100%
+  width: 100%
+  overflow: auto
+  justify-content: center
+  align-items: center
+
+.bhInnerContainer
+  background: #FFCB05
+  padding: 25px
+  transition: opacity 1s
+  opacity: 0
+
+.bhiiContainer
+  background: white
+  padding: 17px 20px
+  width: 198px
+
+form
+  .formInput
+    font-size: 15px
+    font-family: PerpetuaStdR
+    border: none
+    padding-bottom: 8px
+    display: block
+    width: 100%
+    +placeholder
+      color: #333333
+    &:-webkit-autofill
+        -webkit-box-shadow: 0 0 0 100px white inset
+
+#cardNumber
+  +placeholder
+    color: green !important

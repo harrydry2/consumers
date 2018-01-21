@@ -9,3 +9,7 @@ import "./modules/changePage";
 import "./modules/hoverOpacity";
 import "./modules/nightMode";
 import skipHighlights from "./modules/page1/skip";
+
+// Payments
+import "./modules/payments/popUp";
+import "./modules/payments/elements";

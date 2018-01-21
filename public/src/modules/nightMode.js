@@ -1,7 +1,6 @@
 import { $, $$ } from "./bling";
 
-const nightMode = $(".nightMode");
-console.log(nightMode);
+const nightMode = $(".nightModeOn");
 
 nightMode.on("click", function() {
   document.body.classList.toggle("nightmode");

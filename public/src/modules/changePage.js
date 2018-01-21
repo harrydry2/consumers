@@ -281,16 +281,3 @@ $(".s21-s20").on("click", function() {
   section20.classList.add("animate-in");
   section21.classList.remove("animate-in");
 });
-
-$(".s21-s22").on("click", function() {
-  section21.classList.remove("animate-in");
-  section21.classList.add("animate-out");
-  section22.classList.add("animate-in");
-});
-
-// Page22
-// $(".s22-s21").on("click", function() {
-//   section21.classList.remove("animate-out");
-//   section21.classList.add("animate-in");
-//   section22.classList.remove("animate-in");
-// });

@@ -24,5 +24,9 @@ app.use((req, res, next) => {
 
 app.use("/", routes);
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 9000;
 app.listen(PORT, () => console.log("listening"));
+
+// app.listen(3000, "0.0.0.0", function() {
+//   console.log("Listening to port:  " + 3000);
+// });
