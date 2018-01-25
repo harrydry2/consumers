@@ -1,6 +1,7 @@
 import { $, $$ } from "../bling";
 
 const skip = $(".hcSkipActive");
+console.log(skip);
 const wraphighlightsPage1 = $(".wraphighlightsPage1");
 const p1ptContainer = $(".p1ptContainer");
 const typedStringsContainer = $(".typedStringsContainer");

@@ -1,0 +1,22 @@
+mixin popUpDonate()
+  .dOuterContainer
+    .dInnerContainer
+      .diiContainer
+        form(action="/donation" method="POST" id="payment-formD")
+          input(type="text" name="stripeName" class="formInput" placeholder="Full Name")
+          input(type="text" name="stripeEmail" class="formInput" placeholder="Email Address")
+          input(type="number" name="stripeDonation" class="formInputHidden stripeDonationAmount")          
+          .field
+            #cardNumberD.innerFormInput.opacityDown.cardNumberAltD
+            .label Card Number
+          .field
+            #cardExpiryD.innerFormInput.opacityDown.cardExpiryAltD
+            .label Expiration            
+          .field
+            #cardCvcD.innerFormInput
+          .buySection
+            .innerDonate 
+              span.moneyDown _
+              span.middleMoney £5.00
+              span.moneyUp +
+            button.donateButton Donate

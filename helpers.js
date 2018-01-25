@@ -1,5 +1,8 @@
 // Helper Functions
 
+// dump our data
+exports.dump = obj => JSON.stringify(obj, null, 2);
+
 //SVG Loader
 const fs = require("fs");
 exports.icon = name => fs.readFileSync(`./public/icons/${name}.svg`);

@@ -42,11 +42,11 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin("bundle.css"),
     // minify
-    new webpack.DefinePlugin({
-      "process.env": {
-        NODE_ENV: JSON.stringify("production")
-      }
-    }),
+    // new webpack.DefinePlugin({
+    //   "process.env": {
+    //     NODE_ENV: JSON.stringify("production")
+    //   }
+    // }),
     // new UglifyJSPlugin(),
     new CompressionPlugin({
       asset: "[path].gz[query]",

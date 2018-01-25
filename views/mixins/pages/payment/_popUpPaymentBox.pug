@@ -5,10 +5,17 @@ mixin popUpPaymentBox()
         form(action="/charge" method="POST" id="payment-form")
           input(type="text" name="stripeName" class="formInput" placeholder="Full Name")
           input(type="text" name="stripeEmail" class="formInput" placeholder="Email Address")
-          input(type="text" name="stripeEmail" class="formInput" placeholder="Address")
-          input(type="text" name="stripeEmail" class="formInput" placeholder="City")
-          input(type="text" name="stripeEmail" class="formInput" placeholder="Postcode")
-          #cardNumber
-          #cardExpiry
-          #cardCvc          
-          #card-errors(role="alert")
+          input(type="text" name="stripeAddress" class="formInput" placeholder="Address")
+          input(type="text" name="stripeCity" class="formInput" placeholder="City")
+          input(type="text" name="stripePostcode" class="formInput" placeholder="Postcode")
+          .field
+            #cardNumber.innerFormInput.opacityDown.cardNumberAlt
+            .label Card Number
+          .field
+            #cardExpiry.innerFormInput.opacityDown.cardExpiryAlt
+            .label Expiration            
+          .field
+            #cardCvc.innerFormInput
+          .buySection
+            .money £10.00
+            button.buyButton Buy

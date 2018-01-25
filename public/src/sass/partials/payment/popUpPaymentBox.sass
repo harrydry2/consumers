@@ -13,16 +13,16 @@
 .bhInnerContainer
   background: #FFCB05
   padding: 25px
-  transition: opacity 1s
+  transition: opacity 0.8s
   opacity: 0
 
 .bhiiContainer
   background: white
-  padding: 17px 20px
+  padding: 17px 20px 10px 20px
   width: 198px
 
 form
-  .formInput
+  .formInput, #card-errors
     font-size: 15px
     font-family: PerpetuaStdR
     border: none
@@ -34,6 +34,55 @@ form
     &:-webkit-autofill
         -webkit-box-shadow: 0 0 0 100px white inset
 
-#cardNumber
-  +placeholder
-    color: green !important
+.field
+  position: relative
+  padding-bottom: 8px
+  height: 27px
+  .innerFormInput
+    font-size: 15px
+    border: none
+    display: block
+    width: 100%
+    position: absolute
+    left: 0
+    top: 0
+    z-index: 100
+    +placeholder
+      color: #333333
+    &:-webkit-autofill
+      -webkit-box-shadow: 0 0 0 100px white inset
+
+.opacityDown
+  opacity: 0
+
+.label
+  font-size: 15px
+  border: none
+  width: 100%
+  position: absolute
+  left: 0
+  top: 0
+  display: flex
+  transform: translateY(-2px)
+  color: #333333
+
+.buySection
+  border-top: 1px solid rgba(51, 51, 51, 0.5)
+  display: flex
+  justify-content: space-between
+  font-family: PerpetuaStdR
+  font-size: 15px
+  padding-top: 10px
+  color: #333333
+
+.buyButton, .donateButton
+  border: none
+  color: #333333
+  cursor: pointer
+  font-family: PerpetuaStdR
+  padding: 0px
+  background: none
+  font-size: 15px
+
+
+

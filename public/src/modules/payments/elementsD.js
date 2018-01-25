@@ -1,5 +1,6 @@
 const keys = require("../../../../config/keys");
 const stripe = Stripe(keys.STRIPE_P);
+
 var elements = stripe.elements({
   fonts: [
     {
@@ -42,54 +43,54 @@ var elementClasses = {
   invalid: "invalid"
 };
 
-var cardNumber = elements.create("cardNumber", {
+var cardNumberD = elements.create("cardNumber", {
   style: elementStyles,
   classes: elementClasses
 });
-cardNumber.mount("#cardNumber");
+cardNumberD.mount("#cardNumberD");
 
-var cardExpiry = elements.create("cardExpiry", {
+var cardExpiryD = elements.create("cardExpiry", {
   style: elementStyles,
   classes: elementClasses
 });
-cardExpiry.mount("#cardExpiry");
+cardExpiryD.mount("#cardExpiryD");
 
-var cardCvc = elements.create("cardCvc", {
+var cardCvcD = elements.create("cardCvc", {
   style: elementStyles,
   classes: elementClasses
 });
-cardCvc.mount("#cardCvc");
+cardCvcD.mount("#cardCvcD");
 
-const cardNumberAlt = document.querySelector(".cardNumberAlt");
-const cardExpiryAlt = document.querySelector(".cardExpiryAlt");
+const cardNumberAltD = document.querySelector(".cardNumberAltD");
+const cardExpiryAltD = document.querySelector(".cardExpiryAltD");
 
-cardNumber.on("focus", function() {
-  cardNumberAlt.classList.remove("opacityDown");
+cardNumberD.on("focus", function() {
+  cardNumberAltD.classList.remove("opacityDown");
 });
 
-cardNumber.on("blur", function() {
-  if (cardNumberAlt.classList.contains("empty")) {
-    cardNumberAlt.classList.add("opacityDown");
+cardNumberD.on("blur", function() {
+  if (cardNumberAltD.classList.contains("empty")) {
+    cardNumberAltD.classList.add("opacityDown");
   }
 });
 
-cardExpiry.on("focus", function() {
-  cardExpiryAlt.classList.remove("opacityDown");
+cardExpiryD.on("focus", function() {
+  cardExpiryAltD.classList.remove("opacityDown");
 });
 
-cardExpiry.on("blur", function() {
-  if (cardExpiryAlt.classList.contains("empty")) {
-    cardExpiryAlt.classList.add("opacityDown");
+cardExpiryD.on("blur", function() {
+  if (cardExpiryAltD.classList.contains("empty")) {
+    cardExpiryAltD.classList.add("opacityDown");
   }
 });
 
 // Handle form submission
-const form = document.getElementById("payment-form");
-console.log(form, "form");
-form.addEventListener("submit", function(event) {
+const formD = document.getElementById("payment-formD");
+console.log(formD, "form");
+formD.addEventListener("submit", function(event) {
   event.preventDefault();
 
-  stripe.createToken(cardNumber).then(function(result) {
+  stripe.createToken(cardNumberD).then(function(result) {
     if (result.error) {
       console.log(result.error.message);
     } else {
@@ -100,12 +101,12 @@ form.addEventListener("submit", function(event) {
 
 const stripeTokenHandler = token => {
   // Insert the token ID into the form so it gets submitted to the server
-  const form = document.getElementById("payment-form");
+  const formD = document.getElementById("payment-formD");
   const hiddenInput = document.createElement("input");
   hiddenInput.setAttribute("type", "hidden");
   hiddenInput.setAttribute("name", "stripeToken");
   hiddenInput.setAttribute("value", token.id);
-  form.appendChild(hiddenInput);
+  formD.appendChild(hiddenInput);
   // Submit the form
-  form.submit();
+  formD.submit();
 };
